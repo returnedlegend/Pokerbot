@@ -1,7 +1,8 @@
-# ShortStack — heads-up short-deck PLO5 bot
+# ShortStack Adaptive — heads-up short-deck PLO5 bot
 
 A CPU-only bot for the TAMU Datathon Heads Up challenge. `agent.py` retains the
 organizers' HTTP protocol and delegates decisions to `strategy.py`.
+The participant identity is `jr007`.
 
 The model adapts **PyPokerEngine's open source Monte Carlo equity policy** to
 this game's exact rules. It does not use pretrained Hold'em weights: those
@@ -38,8 +39,12 @@ at every new half. One CPU thread is used for the simulations.
 - Load a 1.2 MB preflop model fitted with 40.96 million simulated deals, then
   sample legal unknown hands and future boards, sharing no hidden information
   with the referee. Ties contribute half a win.
-- Weight plausible opponent hands by the public action history. Frequent
-  indiscriminate raises receive less credit for strength than rare raises.
+- Learn recent opponent tendencies separately by street and betting context
+  in `opponent_model.py`, with smoothed priors and uncertainty estimates.
+- Credit rare value raises differently from frequent loose bets; avoid copying
+  an aggressive opponent's raise frequency. Fold reads include wager price.
+- Fade stale evidence as play changes. Require a clearer edge for pot raises
+  and use conservative fold estimates when evaluating speculative pressure.
 - Compare calls with pot odds; estimate half-pot and pot-raise value against a
   continuation range. Smooth observed folds and aggression across each half.
 - Cache simulations within a street so repeated raises do not repeat sampling.
@@ -72,7 +77,8 @@ own slow Python simulations need not meet the event's time limit.
 
 Development tuning seeds and validation seeds are separate. Synthetic opponents
 cannot establish performance against unknown tournament entries. Detailed
-measured results and limitations are in [EVALUATION.md](EVALUATION.md).
+current comparisons and limits are in [docs/ADAPTATION.md](docs/ADAPTATION.md).
+[EVALUATION.md](EVALUATION.md) records the original v1 results.
 
 ## Submission
 

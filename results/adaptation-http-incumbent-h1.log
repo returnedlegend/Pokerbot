@@ -1,0 +1,13 @@
+waiting for agent1 at http://localhost:5008 ...
+waiting for agent2 at http://localhost:5009 ...
+agent1 = jr007 / ShortStack (http://localhost:5008)  (seat 0)
+agent2 = Development evaluation probe / Frozen-50b468255045 (http://localhost:5009)  (seat 1)
+
+Half 1: 1000 deals, seed adapt-http-h2h
+Chips: agent1 -27 (-0.013 bb/deal), agent2 +27
+(One half is mostly card luck; combine both halves for the verdict.)
+Faults:
+  agent1: thinking 6.26s of 8s (wall 9.55s), calls 3291, errors 0
+  agent2: thinking 5.60s of 8s (wall 8.89s), calls 3294, errors 0
+Speed: 1000 hands in 19.10s (52 hands/s)
+RESULT: HALF_DONE

@@ -1,0 +1,59 @@
+{
+  "baseline_commit": "50b4682550455b60bf262fe0a09c60dc6269e1a2",
+  "total_evaluation_hands": 96000,
+  "candidate_hands": 48000,
+  "candidate_match_verdicts": {
+    "WIN": 21,
+    "CHOP": 3,
+    "LOSS": 0
+  },
+  "pooled_improvement": {
+    "including_incumbent": {
+      "deals": 3000,
+      "mean_bb_per_deal": 0.17739583333333334,
+      "ci95": [
+        0.04285624433555463,
+        0.31193542233111204
+      ],
+      "verdict": "WIN",
+      "opponent_profiles": 8,
+      "opponent_deal_observations": 24000,
+      "method": "Average paired differences across opponent profiles within each shared seed/deal, then compute the confidence interval across 3,000 deal clusters. This is a fixed synthetic lineup, not a tournament-win probability estimate."
+    },
+    "excluding_incumbent": {
+      "deals": 3000,
+      "mean_bb_per_deal": 0.20292857142857143,
+      "ci95": [
+        0.05231250386433725,
+        0.35354463899280564
+      ],
+      "verdict": "WIN",
+      "opponent_profiles": 7,
+      "opponent_deal_observations": 21000,
+      "method": "Average paired differences across opponent profiles within each shared seed/deal, then compute the confidence interval across 3,000 deal clusters. This is a fixed synthetic lineup, not a tournament-win probability estimate."
+    }
+  },
+  "pot_raise_reduction_fraction": 0.20531367366810405,
+  "tests": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 50,
+    "elapsed_seconds": 17.17
+  },
+  "runtime_hashes": {
+    "agent.py": "c8d14306a644b7dc7911596be706cbf10af446adb7ba59e45df52187a68467c5",
+    "strategy.py": "c6c34f488c70a16e787c931f793c5853269da2f1db58a04f285a3ea68da84b78",
+    "opponent_model.py": "5c50216228bb3e14afc0cb37df11bca6bba5b6f0acabb7683deb2537518f65e9",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "policy.json": "493d1dc8c748d2b2d38b27a8b97a8d6620def6f431c3d5645630c8b7f7b1d619",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "game.py": "bc00e3c2d1bf64cbd36bf5553dae218767f11b20f388e5c417d989919877f2db",
+    "evaluator.py": "e2a151a4c41828a035030f490c91b81015d04bc209abfb860ca3d0dce649e0b4",
+    "requirements.txt": "1d849660c99debc1b4f390698015089319798d9ccd9190d5ae417fccaf3116d7"
+  },
+  "runtime_validation": "results/adaptation-runtime-validation.json",
+  "limitations": [
+    "Fixed synthetic lineup cannot estimate actual tournament win probability.",
+    "Head-to-head with v1 is a chop.",
+    "Uncertain negative per-profile changes are recorded; absence of significance is not proof of equivalence."
+  ]
+}

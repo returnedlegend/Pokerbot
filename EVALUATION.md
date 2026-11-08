@@ -1,4 +1,8 @@
-# Evaluation and limits
+# Original v1 evaluation and limits
+
+These results describe commit `50b4682550455b60bf262fe0a09c60dc6269e1a2`.
+They are historical evidence for the original policy. The current adaptive
+revision is evaluated separately in [docs/ADAPTATION.md](docs/ADAPTATION.md).
 
 The bot is developed for the exact starter-bundle revision recorded in README.
 Results are **big blinds per duplicate deal**: the sum of two seat-swapped hands,

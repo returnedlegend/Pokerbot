@@ -1,5 +1,5 @@
 {
-  "name": "ShortStack",
+  "name": "ShortStack Adaptive",
   "parameters": {
     "bluff_scale": 0.65,
     "call_margin": 0.03544137179472241,
@@ -9,7 +9,10 @@
     "range_weight": 2.5,
     "realization": 0.9538643499251365,
     "samples": 192,
-    "preflop_table": true
+    "preflop_table": true,
+    "adaptation": 1.0,
+    "caution": 0.006,
+    "style_decay": 0.99
   },
   "selection": {
     "method": "development-only evolutionary tuning followed by range and preflop-table ablations",
@@ -28,6 +31,19 @@
       "73"
     ],
     "preflop_training_seed": 20261108,
-    "model_provenance": "PyPokerEngine HonestPlayer Monte Carlo equity model adapted to short-deck PLO5; no externally pretrained weights"
+    "model_provenance": "PyPokerEngine HonestPlayer Monte Carlo equity model adapted to short-deck PLO5; no externally pretrained weights",
+    "adaptation": {
+      "method": "contextual Bayesian counts, decayed global fallback, conservative fold uncertainty and small pot-control margin; development comparisons with frozen50b4682",
+      "development_seeds": [
+        "adapt-dev1",
+        "adapt-dev2"
+      ],
+      "validation_seeds": [
+        "adapt-hold101",
+        "adapt-hold307",
+        "adapt-hold809"
+      ],
+      "baseline_commit": "50b4682550455b60bf262fe0a09c60dc6269e1a2"
+    }
   }
 }

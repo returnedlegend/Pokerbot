@@ -8,10 +8,14 @@ import json
 from math import comb
 import numpy as np
 from game import Action, Street
+import opponent_model
 from equity_engine import sample_equities, warmup
 
 PARAMS = {
     'samples': 192,
+    'adaptation': 1.0,
+    'caution': .006,
+    'style_decay': .99,
     'preflop_table': True,
     'range_weight': 0.75,
     'call_margin': 0.025,
@@ -41,28 +45,11 @@ def new_half(config, memory):
     memory.update(hands_played=0, opp_actions=0, opp_raises=0,
                   faced=0, folded=0, last_hand=-1, seen=0,
                   last_obs=None, last_action=None, cache={})
+    opponent_model.init(memory, decay=PARAMS['style_decay'])
 
 
 def _observe(obs, memory):
-    if memory['last_hand'] != obs.hand_index:
-        memory['last_hand'] = obs.hand_index
-        memory['seen'] = 0
-        memory['cache'] = {}
-    history = obs.action_history
-    for i in range(memory['seen'], len(history)):
-        a = history[i]
-        if a.is_me:
-            continue
-        memory['opp_actions'] += 1
-        if a.action in (Action.RAISE_HALF, Action.RAISE_POT):
-            memory['opp_raises'] += 1
-        previous = history[i-1] if i else None
-        if previous and previous.is_me and previous.action in (Action.RAISE_HALF, Action.RAISE_POT):
-            memory['faced'] += 1
-            if a.action == Action.FOLD:
-                memory['folded'] += 1
-    memory['seen'] = len(history)
-    memory['last_obs'] = obs
+    opponent_model.observe(obs, memory)
 
 
 def _ranks(values):
@@ -114,24 +101,29 @@ def choose_action(obs, memory):
         board_ranks[s] = _ranks(scores)
     if obs.street != Street.PREFLOP:
         current_rank = board_ranks[int(obs.street)]
-    rate = (memory['opp_raises']+3.)/(memory['opp_actions']+12.)
+    pooled = opponent_model.global_rates(memory, PARAMS['fold_prior'])
+    rate = pooled['aggression']
     # Frequent indiscriminate aggressors should not be credited with nuts.
-    selectivity = PARAMS['range_weight'] * max(0., 1. - 1.8*rate)
+    contexts = opponent_model.context_history(obs)
     weights = np.ones(n)
     for i, a in enumerate(obs.action_history):
         if a.is_me:
             continue
         rank = pre_rank if a.street == Street.PREFLOP else board_ranks[int(a.street)]
-        previous = obs.action_history[i-1] if i else None
-        facing_raise = previous and previous.is_me and previous.action in (Action.RAISE_HALF, Action.RAISE_POT) and previous.street == a.street
+        context = contexts[i]
+        facing_raise = context['voluntary']
+        tendency = opponent_model.profile(memory, a.street, context['facing'], context['price'])
+        trust = tendency['confidence']*PARAMS['adaptation']
+        context_rate = (1.-trust)*rate + trust*tendency['aggression']
+        context_selectivity = PARAMS['range_weight']*max(0., 1.-1.8*context_rate)
         if a.action in (Action.RAISE_HALF, Action.RAISE_POT):
-            threshold = min(.9, max(.48, 1.-rate))
+            threshold = min(.9, max(.48, 1.-context_rate))
             likelihood = .10 + .90*_sigmoid((rank-threshold)*12.)
-            weights *= likelihood ** selectivity
+            weights *= likelihood ** context_selectivity
         elif a.action == Action.CHECK_CALL and facing_raise:
-            weights *= (.35+.65*_sigmoid((rank-.28)*9.)) ** selectivity
+            weights *= (.35+.65*_sigmoid((rank-.28)*9.)) ** context_selectivity
         elif a.action == Action.CHECK_CALL and a.street != Street.PREFLOP:
-            weights *= (1.-.65*_sigmoid((rank-.78)*10.)) ** selectivity
+            weights *= (1.-.65*_sigmoid((rank-.78)*10.)) ** context_selectivity
     weights /= weights.sum()
     eq = float(np.clip(np.dot(weights, wins), 0., 1.))
     call = min(obs.to_call, obs.my_stack)
@@ -148,7 +140,9 @@ def choose_action(obs, memory):
     if obs.to_call and Action.FOLD in obs.legal_actions and call_ev < 0:
         best_ev, best_action = 0., Action.FOLD
 
-    fold_rate = (memory['folded']+8.*PARAMS['fold_prior'])/(memory['faced']+8.)
+    recent_fold = pooled['fold_rate']
+    current_style = opponent_model.profile(memory, obs.street, bool(obs.to_call), price)
+    fold_rate = recent_fold
     for action in (Action.RAISE_HALF, Action.RAISE_POT):
         if action not in obs.legal_actions:
             continue
@@ -159,6 +153,9 @@ def choose_action(obs, memory):
         # Smoothed observed folds determine continuation range, not a fixed
         # assumption that every opponent plays rationally.
         fraction = response / max(1, pot+investment+response)
+        response_style = opponent_model.profile(memory, obs.street, True, fraction)
+        trust_fold = response_style['fold_confidence']*PARAMS['adaptation']
+        fold_rate = (1.-trust_fold)*recent_fold + trust_fold*response_style['fold_lower']
         cutoff = np.clip(fold_rate + .40*(fraction-.25), .015, .92)
         continuation = .025+.975*_sigmoid((current_rank-cutoff)*12.)
         # Very low observed folding: exploit stations by value betting, with
@@ -167,9 +164,15 @@ def choose_action(obs, memory):
         probability_call = float(np.dot(weights, continuation))
         weighted_win = float(np.clip(np.dot(weights*continuation, wins), 0., probability_call))
         fold_prob = (1.-probability_call)*PARAMS['bluff_scale']
+        called_equity = weighted_win/max(1.e-9, probability_call)
         # Discount speculative fold equity; conserve value of checking.
         ev = fold_prob*pot + weighted_win*(pot+investment+response) - probability_call*investment
-        risk_margin = PARAMS['raise_margin']*(pot+investment)
+        caution = PARAMS['caution']*(1.-current_style['confidence'])
+        if obs.to_call and called_equity < .65:
+            caution += PARAMS['caution']
+        if action == Action.RAISE_POT:
+            caution += .5*PARAMS['caution']
+        risk_margin = (PARAMS['raise_margin']+caution)*(pot+investment)
         if obs.street == Street.PREFLOP:
             # No bloated preflop pots merely on noisy 50/50 estimates.
             if eq < PARAMS['preflop_raise'] - max(0., fold_rate-.45)*.5:
@@ -181,15 +184,4 @@ def choose_action(obs, memory):
 
 
 def on_hand_end(result, memory):
-    obs = memory.get('last_obs')
-    # A final opponent fold is absent from the last decision observation.
-    if obs is not None and obs.hand_index == result.hand_index:
-        last = memory.get('last_action')
-        if last in (Action.RAISE_HALF, Action.RAISE_POT):
-            memory['faced'] += 1
-            memory['opp_actions'] += 1
-            if result.winner == 'me' and not result.went_to_showdown:
-                memory['folded'] += 1
-        elif last == Action.CHECK_CALL and not obs.to_call and not obs.is_button and obs.street == Street.RIVER:
-            memory['opp_actions'] += 1
-    memory['hands_played'] += 1
+    opponent_model.finish(result, memory)

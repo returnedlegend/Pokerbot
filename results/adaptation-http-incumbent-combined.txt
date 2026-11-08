@@ -1,0 +1,21 @@
+agent1 = jr007 / ShortStack (http://localhost:5008)
+agent2 = Development evaluation probe / Frozen-50b468255045 (http://localhost:5009)
+
+Duplicate match: 1000 deals (2000 hands), seed adapt-http-h2h
+agent1: -0.021 bb/deal  (std 4.08, stderr 0.129)
+Confidence interval (z=1.96): [-0.274, +0.232] bb/deal
+Reason: interval [-0.274, +0.232] includes 0
+half1: agent1 -27 chips, agent2 +27 chips
+half2: agent1 -15 chips, agent2 +15 chips
+Faults:
+  agent1 half1: thinking 6.26s of 8s (wall 9.55s), calls 3291, errors 0
+  agent1 half2: thinking 3.76s of 8s (wall 7.13s), calls 3364, errors 0
+  agent2 half1: thinking 5.60s of 8s (wall 8.89s), calls 3294, errors 0
+  agent2 half2: thinking 3.35s of 8s (wall 6.67s), calls 3318, errors 0
+Speed: 2000 hands in 33.67s (59 hands/s)
+
+============================================================
+  VERDICT: CHOP  (too close to call - half a win each)
+  Points: agent1 0.5, agent2 0.5
+============================================================
+RESULT: CHOP

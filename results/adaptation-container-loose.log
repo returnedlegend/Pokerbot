@@ -1,0 +1,23 @@
+waiting for agent1 at http://localhost:5008 ...
+waiting for agent2 at http://localhost:5009 ...
+agent1 = jr007 / ShortStack (http://localhost:5008)
+agent2 = Independent adaptation probe / loose_aggressive (http://localhost:5009)
+
+Duplicate match: 1000 deals (2000 hands), seed adaptation-container-loose-1701
+agent1: +4.973 bb/deal  (std 16.15, stderr 0.511)
+Confidence interval (z=1.96): [+3.972, +5.973] bb/deal
+Reason: interval [+3.972, +5.973] is entirely above 0
+half1: agent1 +3682 chips, agent2 -3682 chips
+half2: agent1 +6263 chips, agent2 -6263 chips
+Faults:
+  agent1 half1: thinking 4.80s of 8s (wall 8.55s), calls 3745, errors 0
+  agent1 half2: thinking 4.01s of 8s (wall 7.79s), calls 3788, errors 0
+  agent2 half1: thinking 2.18s of 8s (wall 5.66s), calls 3524, errors 0
+  agent2 half2: thinking 2.21s of 8s (wall 5.72s), calls 3534, errors 0
+Speed: 2000 hands in 29.09s (69 hands/s)
+
+============================================================
+  VERDICT: AGENT1 WINS  (jr007 / ShortStack (http://localhost:5008))
+  Points: agent1 1, agent2 0
+============================================================
+RESULT: AGENT1_WIN
