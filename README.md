@@ -30,6 +30,18 @@ python -m venv .venv
 .venv/bin/python agent.py
 ```
 
+To play against jr007 in your browser:
+
+```sh
+.venv/bin/python tools/human_play.py --port 8080
+```
+
+Open `http://127.0.0.1:8080` on that machine. In the managed cloud, use the
+environment's Desktop browser. The table deals five cards, provides the four
+legal action buttons, keeps a session score and reveals the bot's cards only
+at showdown. Each hand resets both stacks to 80 practice chips. See
+[docs/HUMAN_PLAY.md](docs/HUMAN_PLAY.md).
+
 In separate terminals, from this directory:
 
 ```sh
