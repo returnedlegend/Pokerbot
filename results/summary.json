@@ -1,0 +1,137 @@
+{
+  "frozen_policy_sha256": "fd9b44f3cb82452e01d235825112ee5c71c37f8e698bd1cc7eea22d6e06d0363",
+  "benchmark_matches": 24,
+  "benchmark_hands": 48000,
+  "benchmark_wins": 24,
+  "benchmark_agent_errors": 0,
+  "tests_passed": 29,
+  "tests_command": ".venv/bin/python -m pytest -q",
+  "baseline_aggregate": {
+    "random": {
+      "deals": 3000,
+      "mean_bb_per_deal": 8.860333333333333,
+      "ci95": [
+        8.055304288696806,
+        9.66536237796986
+      ],
+      "verdict": "WIN"
+    },
+    "call": {
+      "deals": 3000,
+      "mean_bb_per_deal": 10.592833333333333,
+      "ci95": [
+        10.06151410176273,
+        11.124152564903936
+      ],
+      "verdict": "WIN"
+    },
+    "half": {
+      "deals": 3000,
+      "mean_bb_per_deal": 10.6205,
+      "ci95": [
+        9.843578821831965,
+        11.397421178168035
+      ],
+      "verdict": "WIN"
+    },
+    "pot": {
+      "deals": 3000,
+      "mean_bb_per_deal": 7.126833333333333,
+      "ci95": [
+        6.209262897709581,
+        8.044403768957086
+      ],
+      "verdict": "WIN"
+    },
+    "checkfold": {
+      "deals": 3000,
+      "mean_bb_per_deal": 1.4931666666666668,
+      "ci95": [
+        1.489435178612642,
+        1.4968981547206914
+      ],
+      "verdict": "WIN"
+    }
+  },
+  "strong_aggregate": {
+    "mc_tight": {
+      "deals": 3000,
+      "mean_bb_per_deal": 1.8076666666666668,
+      "ci95": [
+        1.506127300213936,
+        2.109206033119398
+      ],
+      "verdict": "WIN"
+    },
+    "mc_range": {
+      "deals": 3000,
+      "mean_bb_per_deal": 0.9823333333333333,
+      "ci95": [
+        0.803156580653513,
+        1.1615100860131535
+      ],
+      "verdict": "WIN"
+    },
+    "tools/fast_range_opponent.py": {
+      "deals": 3000,
+      "mean_bb_per_deal": 1.1261666666666668,
+      "ci95": [
+        0.9120404154170596,
+        1.340292917916274
+      ],
+      "verdict": "WIN"
+    }
+  },
+  "http_matches": [
+    {
+      "opponent": "FastRange",
+      "fresh_process_per_half": true,
+      "mean_bb_per_deal": 1.029,
+      "ci95": [
+        0.625,
+        1.433
+      ],
+      "thinking_seconds": [
+        4.59,
+        5.16
+      ],
+      "errors": 0,
+      "evidence": "http-final-fast-combined.txt"
+    },
+    {
+      "opponent": "Random",
+      "mean_bb_per_deal": 8.9055,
+      "ci95": [
+        7.53,
+        10.281
+      ],
+      "thinking_seconds": [
+        2.82,
+        2.39
+      ],
+      "errors": 0,
+      "evidence": "http-final-random.json"
+    },
+    {
+      "opponent": "CallingStation",
+      "restricted_container": true,
+      "mean_bb_per_deal": 11.052,
+      "ci95": [
+        10.139,
+        11.965
+      ],
+      "thinking_seconds": [
+        3.143,
+        4.077
+      ],
+      "errors": 0,
+      "evidence": "http-final-container-call.json"
+    }
+  ],
+  "limitations": [
+    "Synthetic opponents cannot establish tournament win probability.",
+    "Direct benchmark timing excludes HTTP; one contended direct half took 8.027s. Official HTTP matches retained time bank.",
+    "Cloud Docker builds needed supplied proxy CA via temporary BuildKit secret; TLS verification retained.",
+    "No commit push, team registration or submission was performed."
+  ]
+}

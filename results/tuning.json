@@ -1,0 +1,536 @@
+{
+  "purpose": "Development tuning only; requires fresh-seed validation",
+  "opponents": [
+    "random",
+    "call",
+    "pot",
+    "mc_loose"
+  ],
+  "seeds": [
+    "tune-101",
+    "tune-307"
+  ],
+  "deals": 150,
+  "search_seed": 812,
+  "space": {
+    "range_weight": [
+      0.2,
+      1.5
+    ],
+    "call_margin": [
+      0.0,
+      0.07
+    ],
+    "realization": [
+      0.85,
+      1.0
+    ],
+    "raise_margin": [
+      0.0,
+      0.1
+    ],
+    "fold_prior": [
+      0.15,
+      0.5
+    ],
+    "bluff_scale": [
+      0.3,
+      1.0
+    ],
+    "preflop_raise": [
+      0.5,
+      0.62
+    ]
+  },
+  "best": {
+    "samples": 192,
+    "range_weight": 0.75,
+    "call_margin": 0.03544137179472241,
+    "realization": 0.9538643499251365,
+    "raise_margin": 0.046244728490194446,
+    "fold_prior": 0.37036196781968345,
+    "bluff_scale": 0.65,
+    "preflop_raise": 0.543415645869242
+  },
+  "best_objective": 9.566749999999999,
+  "elapsed_seconds": 128.66451740264893,
+  "candidates": [
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.025,
+        "realization": 0.94,
+        "raise_margin": 0.035,
+        "fold_prior": 0.32,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.56
+      },
+      "objective": 8.2895,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 12.093333333333334,
+          "ci95": [
+            9.45119532070037,
+            14.735471345966298
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.453333333333333,
+          "ci95": [
+            9.8469853778042,
+            13.059681288862466
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 9.033333333333333,
+          "ci95": [
+            6.288867746671134,
+            11.777798919995533
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 2.41,
+          "ci95": [
+            1.2642035717531335,
+            3.555796428246867
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.6855660180005998,
+      "iteration": 0
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.025,
+        "realization": 0.94,
+        "raise_margin": 0.035,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.56
+      },
+      "objective": 8.394,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.886666666666667,
+          "ci95": [
+            9.277134170885034,
+            14.496199162448299
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.303333333333333,
+          "ci95": [
+            9.699773228310788,
+            12.906893438355878
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.87,
+          "ci95": [
+            6.128248959518357,
+            11.611751040481641
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 2.52,
+          "ci95": [
+            1.373908139352051,
+            3.666091860647949
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.49289031900025293,
+      "iteration": 1
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.025,
+        "realization": 0.9441907985381485,
+        "raise_margin": 0.035,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.5496561947662804
+      },
+      "objective": 9.019416666666666,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 10.705,
+          "ci95": [
+            8.138180131196354,
+            13.271819868803647
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.563333333333333,
+          "ci95": [
+            9.918189225442934,
+            13.208477441223732
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.393333333333333,
+          "ci95": [
+            5.670645633791169,
+            11.116021032875496
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 3.1783333333333332,
+          "ci95": [
+            1.8936801641246424,
+            4.462986502542024
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.4832231069988211,
+      "iteration": 2
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.03544137179472241,
+        "realization": 0.9441907985381485,
+        "raise_margin": 0.046244728490194446,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.5496561947662804
+      },
+      "objective": 9.17775,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 9.053333333333333,
+          "ci95": [
+            6.565565935707561,
+            11.541100730959105
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.14,
+          "ci95": [
+            9.511176917107841,
+            12.76882308289216
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.263333333333334,
+          "ci95": [
+            5.411825784871082,
+            11.114840881795585
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 3.345,
+          "ci95": [
+            2.0825356897966003,
+            4.6074643102034
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.7728077639982871,
+      "iteration": 3
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.03544137179472241,
+        "realization": 0.9538643499251365,
+        "raise_margin": 0.046244728490194446,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.543415645869242
+      },
+      "objective": 9.566749999999999,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.04,
+          "ci95": [
+            5.588232747974475,
+            10.491767252025523
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.096666666666666,
+          "ci95": [
+            9.471343350182634,
+            12.721989983150698
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 7.706666666666667,
+          "ci95": [
+            4.911573440350621,
+            10.501759892982713
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 3.8316666666666666,
+          "ci95": [
+            2.4789566900192,
+            5.184376643314133
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.72040113200012,
+      "iteration": 4
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.03544137179472241,
+        "realization": 0.9538643499251365,
+        "raise_margin": 0.046244728490194446,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.5395121447375824
+      },
+      "objective": 9.083666666666666,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 9.401666666666667,
+          "ci95": [
+            6.943751184179794,
+            11.85958214915354
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.14,
+          "ci95": [
+            9.502104686191252,
+            12.777895313808749
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 7.693333333333333,
+          "ci95": [
+            4.959968763960191,
+            10.426697902706476
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 3.3266666666666667,
+          "ci95": [
+            2.0305750064298556,
+            4.622758326903478
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.6183904819991994,
+      "iteration": 5
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.03544137179472241,
+        "realization": 0.9538643499251365,
+        "raise_margin": 0.046244728490194446,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.5440583345064921
+      },
+      "objective": 9.566749999999999,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.04,
+          "ci95": [
+            5.588232747974475,
+            10.491767252025523
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.096666666666666,
+          "ci95": [
+            9.471343350182634,
+            12.721989983150698
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 7.706666666666667,
+          "ci95": [
+            4.911573440350621,
+            10.501759892982713
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 3.8316666666666666,
+          "ci95": [
+            2.4789566900192,
+            5.184376643314133
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.8070574249998685,
+      "iteration": 6
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.03544137179472241,
+        "realization": 0.9538643499251365,
+        "raise_margin": 0.046244728490194446,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.65,
+        "preflop_raise": 0.5549626038903286
+      },
+      "objective": 8.653,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 7.756666666666667,
+          "ci95": [
+            5.298151102772154,
+            10.21518223056118
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 10.783333333333333,
+          "ci95": [
+            9.180046737204187,
+            12.38661992946248
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.193333333333333,
+          "ci95": [
+            5.351479987381795,
+            11.035186679284871
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 2.8566666666666665,
+          "ci95": [
+            1.6037660938077964,
+            4.1095672395255365
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.8000624420009217,
+      "iteration": 7
+    },
+    {
+      "params": {
+        "samples": 192,
+        "range_weight": 0.75,
+        "call_margin": 0.03544137179472241,
+        "realization": 0.9538643499251365,
+        "raise_margin": 0.046244728490194446,
+        "fold_prior": 0.37036196781968345,
+        "bluff_scale": 0.6571500906010288,
+        "preflop_raise": 0.543415645869242
+      },
+      "objective": 8.74025,
+      "opponents": {
+        "random": {
+          "deals": 300,
+          "mean_bb_per_deal": 8.57,
+          "ci95": [
+            6.081200913613781,
+            11.05879908638622
+          ],
+          "verdict": "WIN"
+        },
+        "call": {
+          "deals": 300,
+          "mean_bb_per_deal": 11.096666666666666,
+          "ci95": [
+            9.471343350182634,
+            12.721989983150698
+          ],
+          "verdict": "WIN"
+        },
+        "pot": {
+          "deals": 300,
+          "mean_bb_per_deal": 7.706666666666667,
+          "ci95": [
+            4.911573440350621,
+            10.501759892982713
+          ],
+          "verdict": "WIN"
+        },
+        "mc_loose": {
+          "deals": 300,
+          "mean_bb_per_deal": 2.9616666666666664,
+          "ci95": [
+            1.6271882922772132,
+            4.2961450410561195
+          ],
+          "verdict": "WIN"
+        }
+      },
+      "max_strategy_seconds_per_half": 0.6033304370006363,
+      "iteration": 8
+    }
+  ]
+}

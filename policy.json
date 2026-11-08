@@ -1,0 +1,33 @@
+{
+  "name": "ShortStack",
+  "parameters": {
+    "bluff_scale": 0.65,
+    "call_margin": 0.03544137179472241,
+    "fold_prior": 0.37036196781968345,
+    "preflop_raise": 0.543415645869242,
+    "raise_margin": 0.046244728490194446,
+    "range_weight": 2.5,
+    "realization": 0.9538643499251365,
+    "samples": 192,
+    "preflop_table": true
+  },
+  "selection": {
+    "method": "development-only evolutionary tuning followed by range and preflop-table ablations",
+    "development_seeds": [
+      "tune-101",
+      "tune-307",
+      "stress-dev",
+      "stress-dev2",
+      "table-dev1",
+      "table-dev2",
+      "dev4"
+    ],
+    "validation_seeds": [
+      "11",
+      "29",
+      "73"
+    ],
+    "preflop_training_seed": 20261108,
+    "model_provenance": "PyPokerEngine HonestPlayer Monte Carlo equity model adapted to short-deck PLO5; no externally pretrained weights"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "phase": "final_frozen_policy",
+  "runtime_sha256": {
+    "agent.py": "ce48420e3f8deb3101ca1bedfc68b2370a2082638a8b8e93914846a94989b610",
+    "strategy.py": "a3dacad7c8dab9df5fd7b23203109d8dd57fe63191d25145dbf2175d4e3e2c90",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "policy.json": "fd9b44f3cb82452e01d235825112ee5c71c37f8e698bd1cc7eea22d6e06d0363",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "requirements.txt": "1d849660c99debc1b4f390698015089319798d9ccd9190d5ae417fccaf3116d7",
+    "game.py": "bc00e3c2d1bf64cbd36bf5553dae218767f11b20f388e5c417d989919877f2db",
+    "evaluator.py": "e2a151a4c41828a035030f490c91b81015d04bc209abfb860ca3d0dce649e0b4"
+  },
+  "image_runtime_matches_checkout": true,
+  "build": {
+    "organizer_dockerfiles_unchanged": true,
+    "cloud_transport_adaptation": "Temporary Dockerfile copies mounted host CA bundle as BuildKit secret and set PIP_CERT in pip steps; TLS verification enabled. No CA copied into image layers.",
+    "unmodified_check_build": "Base pip TLS verification fails without cloud proxy CA trust; equivalent recipes plus temporary trust mounts completed.",
+    "base_image": "sha256:d496de9d6e96d7f61a389ecf40a8869ccf281c306eab564301121c52e1c68ca5",
+    "bot_image": "sha256:469acb88586a5f6c88cc90751ee7a2c28ab1567d75c9e85ac4201dde664fecdd",
+    "base_bytes": 1121246749,
+    "bot_bytes": 1333658130,
+    "added_bytes": 212411381,
+    "max_added_bytes": 3221225472,
+    "reproduction_helper": "tools/check_build_cloud.sh",
+    "helper_validation": "bash -n passed; generated Dockerfiles byte-match previously built and tested CA-adapted recipes. Full helper was not rerun after saving."
+  },
+  "runtime": {
+    "cpu": 1,
+    "memory": "4g",
+    "network": "none",
+    "root_filesystem": "read-only",
+    "tmpfs": "/tmp:rw,nosuid,nodev,size=512m",
+    "user": "10001:10001",
+    "capabilities": "ALL dropped",
+    "no_new_privileges": true
+  },
+  "smoke": {
+    "passed": true,
+    "cold_start_seconds": 8.3,
+    "startup_limit_seconds": 15,
+    "sample_decision_ms": [
+      4,
+      3,
+      4,
+      3,
+      3
+    ],
+    "legal_actions": true,
+    "new_half": true,
+    "hand_end": true,
+    "log": "results/runtime-final-smoke.log"
+  },
+  "http_match": {
+    "status": "passed",
+    "opponent": "official baseline_calling_station.py",
+    "seed": "final-container-call-901",
+    "deals_per_half": 1000,
+    "total_hands": 2000,
+    "verdict": "AGENT1_WIN",
+    "mean_bb_per_deal": 11.052,
+    "ci_95": [
+      10.138648521522608,
+      11.965351478477391
+    ],
+    "agent_stats": [
+      {
+        "calls": 3993,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 3.14321,
+        "wall_seconds": 7.13598
+      },
+      {
+        "calls": 3993,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 4.07749,
+        "wall_seconds": 8.070257
+      }
+    ],
+    "resource_note": "Bot, opponent web server, and official judge all shared the same 1 CPU, 4 GB, no-network, read-only container. Both halves reset bot memory through official new-half; process restart between halves was not performed in this local combined match.",
+    "result": "results/http-final-container-call.json",
+    "log": "results/http-final-container-call.log"
+  }
+}

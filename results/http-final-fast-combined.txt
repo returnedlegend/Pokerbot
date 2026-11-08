@@ -1,0 +1,21 @@
+agent1 = Pokerbot / ShortStack (http://localhost:5008)
+agent2 = Independent development probe / FastRange (http://localhost:5009)
+
+Duplicate match: 1000 deals (2000 hands), seed final-split
+agent1: +1.029 bb/deal  (std 6.52, stderr 0.206)
+Confidence interval (z=1.96): [+0.625, +1.433] bb/deal
+Reason: interval [+0.625, +1.433] is entirely above 0
+half1: agent1 +168 chips, agent2 -168 chips
+half2: agent1 +1890 chips, agent2 -1890 chips
+Faults:
+  agent1 half1: thinking 4.59s of 8s (wall 7.90s), calls 3321, errors 0
+  agent1 half2: thinking 5.16s of 8s (wall 8.51s), calls 3353, errors 0
+  agent2 half1: thinking 2.94s of 8s (wall 6.51s), calls 3589, errors 0
+  agent2 half2: thinking 3.76s of 8s (wall 7.37s), calls 3673, errors 0
+Speed: 2000 hands in 31.82s (63 hands/s)
+
+============================================================
+  VERDICT: AGENT1 WINS  (Pokerbot / ShortStack (http://localhost:5008))
+  Points: agent1 1, agent2 0
+============================================================
+RESULT: AGENT1_WIN

@@ -1,0 +1,23 @@
+waiting for agent1 at http://localhost:5008 ...
+waiting for agent2 at http://localhost:5009 ...
+agent1 = Pokerbot / ShortStack (http://localhost:5008)
+agent2 = Challenges Team / CallingStation (http://localhost:5009)
+
+Duplicate match: 1000 deals (2000 hands), seed final-container-call-901
+agent1: +11.052 bb/deal  (std 14.74, stderr 0.466)
+Confidence interval (z=1.96): [+10.139, +11.965] bb/deal
+Reason: interval [+10.139, +11.965] is entirely above 0
+half1: agent1 +10151 chips, agent2 -10151 chips
+half2: agent1 +11953 chips, agent2 -11953 chips
+Faults:
+  agent1 half1: thinking 3.14s of 8s (wall 7.14s), calls 3993, errors 0
+  agent1 half2: thinking 4.08s of 8s (wall 8.07s), calls 3993, errors 0
+  agent2 half1: thinking 1.19s of 8s (wall 5.73s), calls 4917, errors 0
+  agent2 half2: thinking 1.59s of 8s (wall 5.93s), calls 4952, errors 0
+Speed: 2000 hands in 28.95s (69 hands/s)
+
+============================================================
+  VERDICT: AGENT1 WINS  (Pokerbot / ShortStack (http://localhost:5008))
+  Points: agent1 1, agent2 0
+============================================================
+RESULT: AGENT1_WIN

@@ -1,0 +1,10 @@
+{
+  "bluff_scale": 0.65,
+  "call_margin": 0.03544137179472241,
+  "fold_prior": 0.37036196781968345,
+  "preflop_raise": 0.543415645869242,
+  "raise_margin": 0.046244728490194446,
+  "range_weight": 0.75,
+  "realization": 0.9538643499251365,
+  "samples": 192
+}

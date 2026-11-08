@@ -1,0 +1,43 @@
+{
+  "phase": "initial_strategy_before_final_policy",
+  "build": {
+    "organizer_dockerfiles_unchanged": true,
+    "cloud_transport_adaptation": "Temporary Dockerfile copies mounted host CA bundle as BuildKit secret and set PIP_CERT in pip steps; TLS verification enabled.",
+    "unmodified_check_build": "Failed at base pip TLS trust because inner image lacked managed cloud proxy CA.",
+    "base_image": "sha256:d496de9d6e96d7f61a389ecf40a8869ccf281c306eab564301121c52e1c68ca5",
+    "bot_image": "sha256:287c5304d815b8b4e006604fbf5fc79634d8d1f7f3ab1ade33431f6e22099b1b",
+    "base_bytes": 1121246749,
+    "bot_bytes": 1332569534,
+    "added_bytes": 211322785,
+    "max_added_bytes": 3221225472
+  },
+  "runtime": {
+    "cpu": 1,
+    "memory": "4g",
+    "network": "none",
+    "root_filesystem": "read-only",
+    "tmpfs": "/tmp:rw,nosuid,nodev,size=512m",
+    "user": "10001:10001",
+    "capabilities": "ALL dropped",
+    "no_new_privileges": true
+  },
+  "smoke": {
+    "passed": true,
+    "cold_start_seconds": 8.0,
+    "startup_limit_seconds": 15,
+    "sample_decision_ms": [
+      4,
+      2,
+      3,
+      2,
+      2
+    ],
+    "legal_actions": true,
+    "new_half": true,
+    "hand_end": true
+  },
+  "strategy_invariants": {
+    "passed": 8,
+    "elapsed_seconds": 11.89
+  }
+}

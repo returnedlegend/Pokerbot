@@ -1,0 +1,49 @@
+{
+  "description": "Offline fitted Monte Carlo equity lookup, exact event rules, uniform random opponent; not externally pretrained weights",
+  "training": {
+    "command": "python tools/train_preflop.py --samples 2048 --seed 20261108",
+    "seed": 20261108,
+    "samples_per_class": 2048,
+    "class_count": 19998,
+    "rollouts": 40955904,
+    "hands": 376992,
+    "wall_seconds": 87.9,
+    "equity_min": 0.1025390625,
+    "equity_max": 0.704345703125,
+    "maximum_standard_error": 0.011051157489418983,
+    "weighted_uniform_hand_mean": 0.5000258088111877,
+    "bytes": 1153787
+  },
+  "validation": {
+    "suit_invariance": {
+      "random_hands": 200,
+      "all_suit_permutations": 24,
+      "passed": true
+    },
+    "independent_reference": {
+      "hand_seed": 20261109,
+      "random_hands": 32,
+      "draws_per_hand": 100000,
+      "equity_seed_base": 718019,
+      "rollouts": 3200000,
+      "RMSE": 0.013035502523711098,
+      "max_absolute_discrepancy": 0.025451958179473877,
+      "max_combined_standard_error_z": 2.374312160849096,
+      "passed": true
+    },
+    "runtime_tests": {
+      "command": "python -m pytest -q tests/test_preflop_model.py",
+      "passed": 2,
+      "runtime_suit_symmetry_hands": 40,
+      "additional_independent_calibration_hands": 8,
+      "additional_draws_per_hand": 100000
+    }
+  },
+  "sha256": {
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "tools/train_preflop.py": "dbb58a9e2789d4d4643d44b53f5ae26ff7c23ee221675c01ed7370fe40f52caa",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "evaluator.py": "e2a151a4c41828a035030f490c91b81015d04bc209abfb860ca3d0dce649e0b4",
+    "tests/test_preflop_model.py": "ddad93c8ef7234eafd280afeb3b1896e73be584761f0302fe0a1beffa5aa1a01"
+  }
+}

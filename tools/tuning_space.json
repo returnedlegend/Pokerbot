@@ -1,0 +1,9 @@
+{
+  "range_weight": [0.2, 3.0],
+  "call_margin": [0.0, 0.07],
+  "realization": [0.85, 1.0],
+  "raise_margin": [0.0, 0.10],
+  "fold_prior": [0.15, 0.5],
+  "bluff_scale": [0.3, 1.0],
+  "preflop_raise": [0.50, 0.62]
+}
