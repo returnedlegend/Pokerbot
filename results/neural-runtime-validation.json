@@ -1,0 +1,141 @@
+{
+  "phase": "neural_final_frozen_policy",
+  "runtime_sha256": {
+    "agent.py": "e32bdc4d54a4f7be50c323e08ac3cc2fd70f267e8ee50fbdb85f2c1dd6bed8d0",
+    "strategy.py": "1a92e94f52c522513f8f1eed46170d4a262e0f57b2775f41c4261b61defcefaa",
+    "opponent_model.py": "ca642d5b5f87a266c5b6ded641803de44c1cbaf55a01874974e3e009dbebb881",
+    "equity_network.py": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network.npz": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1",
+    "policy.json": "81411e0ee1c83d010b761673ff4b0828dadd29ee18ba77c87b776ecfbb0ada30",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "requirements.txt": "1d849660c99debc1b4f390698015089319798d9ccd9190d5ae417fccaf3116d7",
+    "game.py": "bc00e3c2d1bf64cbd36bf5553dae218767f11b20f388e5c417d989919877f2db",
+    "evaluator.py": "e2a151a4c41828a035030f490c91b81015d04bc209abfb860ca3d0dce649e0b4"
+  },
+  "image_runtime_matches_checkout": true,
+  "build": {
+    "base_image": "sha256:d496de9d6e96d7f61a389ecf40a8869ccf281c306eab564301121c52e1c68ca5",
+    "bot_image": "sha256:2140ad3a377fdce73ac14a70734f5c55f9b68a61d5049d1b441d07d082e5beab",
+    "base_bytes": 1121246749,
+    "bot_bytes": 1334308874,
+    "added_bytes": 213062125,
+    "organizer_dockerfiles_unchanged": true,
+    "helper": "tools/check_build_cloud.sh",
+    "TLS_verification": "Preserved using temporary host CA BuildKit secret mounts in otherwise unchanged organizer recipes.",
+    "helper_log": "results/neural-build-smoke.log",
+    "max_added_bytes": 3221225472
+  },
+  "runtime": {
+    "cpu": 1,
+    "memory": "4g",
+    "network": "none",
+    "root_filesystem": "read-only",
+    "tmpfs": "/tmp:rw,nosuid,nodev,size=512m",
+    "user": "10001:10001",
+    "capabilities": "ALL dropped",
+    "no_new_privileges": true,
+    "verified_container_configuration": {
+      "network_mode": "none",
+      "readonly_rootfs": true,
+      "nano_cpus": 1000000000,
+      "memory_bytes": 4294967296,
+      "user": "10001:10001",
+      "cap_drop": [
+        "ALL"
+      ],
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pids_limit": 256,
+      "tmpfs": {
+        "/tmp": "rw,nosuid,nodev,size=512m"
+      }
+    }
+  },
+  "smoke": {
+    "status": "passed",
+    "log": "results/neural-runtime-smoke.log",
+    "cold_start_seconds": 7.3,
+    "second_staged_smoke_readiness_seconds": 6.0,
+    "startup_limit_seconds": 15,
+    "note": "cold_start_seconds is the un-staged immediate organizer smoke from check_build_cloud.sh. A second same-image smoke starts after staging helper files; its timer omits staging time.",
+    "new_half": true,
+    "hand_end": true,
+    "legal_actions": true,
+    "sample_decision_ms": [
+      4,
+      3,
+      3,
+      2,
+      2
+    ]
+  },
+  "http_match": {
+    "status": "passed",
+    "opponent": "independent loose_aggressive StyleOpponent",
+    "seed": "neural-container-loose-1108",
+    "deals_per_half": 1000,
+    "total_hands": 2000,
+    "verdict": "AGENT1_WIN",
+    "mean_bb_per_deal": 3.891,
+    "ci_95": [
+      2.800691855941909,
+      4.981308144058091
+    ],
+    "agent_stats": [
+      {
+        "calls": 3732,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 5.553786,
+        "wall_seconds": 9.28516
+      },
+      {
+        "calls": 3713,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 4.218222,
+        "wall_seconds": 7.930722
+      }
+    ],
+    "opponent_stats": [
+      {
+        "calls": 3548,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 1.980667,
+        "wall_seconds": 5.475602
+      },
+      {
+        "calls": 3535,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 1.146404,
+        "wall_seconds": 4.611431
+      }
+    ],
+    "result": "results/neural-container-loose.json",
+    "log": "results/neural-container-loose.log",
+    "resource_note": "Bot, independent style opponent and official judge shared the same 1 CPU,4GB,no-network,read-only container. The combined duplicate match used /new-half to reset memory between halves; it did not restart processes between halves."
+  },
+  "runtime_source_unchanged": true,
+  "validation_checks": {
+    "cold_start_within_15_seconds": true,
+    "all_bot_thinking_banks_within_8_seconds": true,
+    "zero_errors_skips_timeouts_forfeits": true,
+    "runtime_source_unchanged": true
+  }
+}

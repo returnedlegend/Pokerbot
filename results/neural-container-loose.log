@@ -1,0 +1,23 @@
+waiting for agent1 at http://localhost:5008 ...
+waiting for agent2 at http://localhost:5009 ...
+agent1 = jr007 / ShortStack (http://localhost:5008)
+agent2 = Independent neural probe / loose_aggressive (http://localhost:5009)
+
+Duplicate match: 1000 deals (2000 hands), seed neural-container-loose-1108
+agent1: +3.891 bb/deal  (std 17.59, stderr 0.556)
+Confidence interval (z=1.96): [+2.801, +4.981] bb/deal
+Reason: interval [+2.801, +4.981] is entirely above 0
+half1: agent1 +3345 chips, agent2 -3345 chips
+half2: agent1 +4437 chips, agent2 -4437 chips
+Faults:
+  agent1 half1: thinking 5.55s of 8s (wall 9.29s), calls 3732, errors 0
+  agent1 half2: thinking 4.22s of 8s (wall 7.93s), calls 3713, errors 0
+  agent2 half1: thinking 1.98s of 8s (wall 5.48s), calls 3548, errors 0
+  agent2 half2: thinking 1.15s of 8s (wall 4.61s), calls 3535, errors 0
+Speed: 2000 hands in 28.76s (70 hands/s)
+
+============================================================
+  VERDICT: AGENT1 WINS  (jr007 / ShortStack (http://localhost:5008))
+  Points: agent1 1, agent2 0
+============================================================
+RESULT: AGENT1_WIN

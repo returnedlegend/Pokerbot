@@ -1,5 +1,8 @@
 # Adaptive opponent modeling: final results
 
+Historical adaptive revision: `97883009569ad2d383b8145e46ee642262390049`.
+The newer selected policy is documented in [NEURAL_REVISION.md](NEURAL_REVISION.md).
+
 This revision responds to learned tendencies rather than mirroring an
 opponent's aggression. It preserves participant `jr007` and the event's
 unchanged HTTP interface, rules, evaluator and dependencies.

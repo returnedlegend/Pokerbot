@@ -1,0 +1,2 @@
+# Offline training only; these are not imported by the tournament bot.
+scikit-learn==1.9.1

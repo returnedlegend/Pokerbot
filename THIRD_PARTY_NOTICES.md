@@ -18,6 +18,21 @@ that a Hold'em policy is valid for this event. Parameters are tuned locally.
 The event's `evaluator.py`, `game.py`, web-server template, judge and baseline
 bots originate from https://github.com/tamu-datathon-org/heads-up-bundle.
 
+## Event-specific neural weights and research
+
+`equity_network.npz` contains newly trained weights produced by this project
+with the open-source scikit-learn `MLPRegressor` (BSD-3-Clause):
+https://github.com/scikit-learn/scikit-learn . No scikit-learn package code is
+vendored, and the tournament runtime does not import that training dependency.
+The model's simulation labels use the event's exact rules. See
+`docs/NEURAL_MODEL.md` for training and validation provenance.
+
+The optional, disabled river abstraction is an independent implementation of
+CFR+. OpenSpiel's open-source CFR implementations and RLCard's model-zoo
+documentation informed the research; source links and applicability limits are
+in `docs/STRENGTH_RESEARCH.md`. No pretrained betting policy from those projects
+is represented as a solution to this event.
+
 ## PyPokerEngine MIT license
 
 MIT License

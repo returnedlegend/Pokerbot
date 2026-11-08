@@ -1,0 +1,72 @@
+{
+  "opponent_model": "gpt-6-astra",
+  "hands": 40,
+  "paired_deals": 20,
+  "bot_net_chips": -34,
+  "astra_net_chips": 34,
+  "bot_bb_per_duplicate_deal": -0.85,
+  "approximate_ci95": [
+    -2.7485607291064627,
+    1.048560729106463
+  ],
+  "astra_decisions": 120,
+  "submitted_invalid_actions": 0,
+  "actions": {
+    "bot": {
+      "CHECK_CALL": 96,
+      "RAISE_POT": 9,
+      "RAISE_HALF": 11,
+      "FOLD": 16
+    },
+    "astra": {
+      "CHECK_CALL": 60,
+      "FOLD": 8,
+      "RAISE_POT": 29,
+      "RAISE_HALF": 23
+    }
+  },
+  "replay_audit_passed": true,
+  "every_public_observation_verified": true,
+  "every_bot_action_reproduced": true,
+  "time_bank_enforced": false,
+  "showdown_hands": 16,
+  "mean_pot_chips": 24.9,
+  "limitations": "Small direct-LLM exhibition; not tournament latency, not a reliable ranking or win probability.",
+  "largest_pots": [
+    {
+      "half": 1,
+      "hand_index": 3,
+      "bot_net_chips": 80,
+      "pot": 160,
+      "showdown": true
+    },
+    {
+      "half": 2,
+      "hand_index": 3,
+      "bot_net_chips": -80,
+      "pot": 160,
+      "showdown": true
+    },
+    {
+      "half": 2,
+      "hand_index": 12,
+      "bot_net_chips": -36,
+      "pot": 116,
+      "showdown": false
+    },
+    {
+      "half": 2,
+      "hand_index": 14,
+      "bot_net_chips": 24,
+      "pot": 48,
+      "showdown": true
+    },
+    {
+      "half": 1,
+      "hand_index": 10,
+      "bot_net_chips": 8,
+      "pot": 32,
+      "showdown": false
+    }
+  ]
+}

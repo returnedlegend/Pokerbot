@@ -21,6 +21,7 @@ def init(memory, decay=DECAY):
         'counts': [[[0., 0., 0.] for _ in range(2)] for _ in range(4)],
         'responses': [[[0., 0.] for _ in range(3)] for _ in range(4)],
         'last_decay': -1, 'finished': -1, 'decay': float(decay),
+        'revealed_bets': [[[[0.]*5 for _ in range(2)] for _ in range(2)] for _ in range(4)],
     }
 
 
@@ -63,6 +64,10 @@ def _decay(memory, hand):
         for rows in model['responses']:
             for row in rows:
                 for i in range(2): row[i] *= factor
+        for street in model['revealed_bets']:
+            for facing in street:
+                for counts in facing:
+                    for i in range(5): counts[i] *= factor
         model['last_decay'] = hand
 
 
@@ -151,3 +156,23 @@ def global_rates(memory, fold_prior=.37):
     faced = sum(row[1] for street in model['responses'] for row in street)
     return {'aggression': (raises+3.)/(actions+12.),
             'fold_rate': (folded+8.*fold_prior)/(faced+8.)}
+
+
+def record_bet_quality(memory, street, facing, action, quantile):
+    """Record only legally revealed terminal betting-hand quality.
+
+    The strategy supplies a percentile within the pre-bet conditional range,
+    not the eventual winning outcome or an unrevealed opponent holding.
+    """
+    if action not in (Action.RAISE_HALF, Action.RAISE_POT):
+        raise ValueError('Expected a betting action')
+    if not 0. <= quantile <= 1.:
+        raise ValueError('Expected a percentile in [0,1]')
+    kind = 0 if action == Action.RAISE_HALF else 1
+    bucket = min(4, int(quantile*5))
+    memory['opponent_model']['revealed_bets'][int(street)][int(facing)][kind][bucket] += 1.
+
+
+def bet_quality(memory, street, facing, action):
+    kind = 0 if action == Action.RAISE_HALF else 1
+    return tuple(memory['opponent_model']['revealed_bets'][int(street)][int(facing)][kind])

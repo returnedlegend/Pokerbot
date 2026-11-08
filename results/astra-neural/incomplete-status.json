@@ -1,0 +1,52 @@
+{
+  "status": "incomplete_due_to_model_account_usage_limit",
+  "planned_hands": 200,
+  "completed_hands": 189,
+  "matches": [
+    {
+      "match": "astra_neural_a",
+      "saved": false,
+      "halves": [
+        {
+          "half": 1,
+          "hands": 50,
+          "astra_decisions": 175,
+          "bot_net_chips": 246,
+          "invalid_requests": 0
+        },
+        {
+          "half": 2,
+          "hands": 49,
+          "astra_decisions": 183,
+          "bot_net_chips": -528,
+          "invalid_requests": 0
+        }
+      ]
+    },
+    {
+      "match": "astra_neural_b",
+      "saved": false,
+      "halves": [
+        {
+          "half": 1,
+          "hands": 50,
+          "astra_decisions": 178,
+          "bot_net_chips": -142,
+          "invalid_requests": 0
+        },
+        {
+          "half": 2,
+          "hands": 40,
+          "astra_decisions": 144,
+          "bot_net_chips": 102,
+          "invalid_requests": 0
+        }
+      ]
+    }
+  ],
+  "source_unchanged": true,
+  "valid_complete_match": false,
+  "why": "Two remaining gpt-6-astra actors stopped at the account usage limit; no automatic policy or other model substituted. Full referee traces were intentionally not saved before both halves finish.",
+  "do_not_use_for_ranking": true,
+  "referee_state": "Preserved in running processes; no further player requests will be made without actual Astra availability."
+}

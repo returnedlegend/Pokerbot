@@ -1,13 +1,21 @@
-# ShortStack Adaptive — heads-up short-deck PLO5 bot
+# ShortStack Neural — heads-up short-deck PLO5 bot
 
 A CPU-only bot for the TAMU Datathon Heads Up challenge. `agent.py` retains the
 organizers' HTTP protocol and delegates decisions to `strategy.py`.
 The participant identity is `jr007`.
 
-The model adapts **PyPokerEngine's open source Monte Carlo equity policy** to
-this game's exact rules. It does not use pretrained Hold'em weights: those
-weights assume the wrong deck, private-card count and hand rankings. See
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source and MIT attribution.
+The bot combines **PyPokerEngine's open source Monte Carlo equity approach**,
+an event-specific trained neural equity predictor, and an explicit adaptive
+betting policy. The neural weights were trained locally using scikit-learn;
+they are not pretrained Hold'em weights or a fine-tuned language model. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for provenance and attribution.
+
+The frozen upgrade beat the previous submitted bot on 3,000 fresh duplicate
+deals: **+0.377 bb per duplicate deal**, with a whole-seed 95% interval
+**[+0.139, +0.616]**. Validation covered 120,000 hands across both versions and
+ten profiles, with zero errors. Improvement over the wider external field is
+still uncertain. The complete results and limits are in
+[docs/NEURAL_REVISION.md](docs/NEURAL_REVISION.md).
 
 ## Run
 
@@ -39,6 +47,9 @@ at every new half. One CPU thread is used for the simulations.
 - Load a 1.2 MB preflop model fitted with 40.96 million simulated deals, then
   sample legal unknown hands and future boards, sharing no hidden information
   with the referee. Ties contribute half a win.
+- Anchor flop/turn sampling with a 38 KB neural equity predictor trained on
+  80,000 legal positions. Limit its influence using measured model error and
+  Monte Carlo covariance; neural prediction accuracy alone is not a win rate.
 - Learn recent opponent tendencies separately by street and betting context
   in `opponent_model.py`, with smoothed priors and uncertainty estimates.
 - Credit rare value raises differently from frequent loose bets; avoid copying
@@ -47,6 +58,8 @@ at every new half. One CPU thread is used for the simulations.
   and use conservative fold estimates when evaluating speculative pressure.
 - Compare calls with pot odds; estimate half-pot and pot-raise value against a
   continuation range. Smooth observed folds and aggression across each half.
+- Remove future-play penalties from terminal calls and bound remaining risk by
+  the chips that can actually be lost. Use separate half-pot and pot margins.
 - Cache simulations within a street so repeated raises do not repeat sampling.
 - Keep the model compact, deterministic and offline; no language model or GPU.
 
@@ -77,8 +90,13 @@ own slow Python simulations need not meet the event's time limit.
 
 Development tuning seeds and validation seeds are separate. Synthetic opponents
 cannot establish performance against unknown tournament entries. Detailed
-current comparisons and limits are in [docs/ADAPTATION.md](docs/ADAPTATION.md).
+current comparisons and limits are in
+[docs/NEURAL_REVISION.md](docs/NEURAL_REVISION.md).
+[docs/ADAPTATION.md](docs/ADAPTATION.md) records the earlier adaptive version;
 [EVALUATION.md](EVALUATION.md) records the original v1 results.
+For the neural model's training and reproduction, see
+[docs/NEURAL_MODEL.md](docs/NEURAL_MODEL.md). Additional training dependencies
+in `requirements-training.txt` are offline only.
 
 ## Submission
 

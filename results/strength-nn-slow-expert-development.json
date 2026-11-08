@@ -1,0 +1,1482 @@
+{
+  "phase": "development",
+  "seeds": [
+    "strength-dev101",
+    "strength-dev307"
+  ],
+  "incumbent_ref": "97883009569ad2d383b8145e46ee642262390049",
+  "candidate": {
+    "strategy_sha256": "2120570c7dd30dedad59e0f43683909ffce77b060303937ea3755d3d0f0186ac",
+    "opponent_model_sha256": "5c50216228bb3e14afc0cb37df11bca6bba5b6f0acabb7683deb2537518f65e9",
+    "equity_network_source_sha256": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network_weights_sha256": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1",
+    "parameters": {
+      "samples": 256,
+      "refine_samples": 768,
+      "refine_z": 1.25,
+      "refine_min_pot": 12,
+      "ess_floor": 48,
+      "draw_model": true,
+      "sensible_checks": false,
+      "adaptation": 1.0,
+      "caution": 0.006,
+      "style_decay": 0.99,
+      "preflop_table": true,
+      "range_weight": 2.5,
+      "call_margin": 0.03544137179472241,
+      "realization": 0.9538643499251365,
+      "raise_margin": 0.046244728490194446,
+      "fold_prior": 0.37036196781968345,
+      "bluff_scale": 0.65,
+      "preflop_raise": 0.543415645869242
+    }
+  },
+  "incumbent": {
+    "strategy_sha256": "c6c34f488c70a16e787c931f793c5853269da2f1db58a04f285a3ea68da84b78",
+    "opponent_model_sha256": "5c50216228bb3e14afc0cb37df11bca6bba5b6f0acabb7683deb2537518f65e9",
+    "equity_network_source_sha256": null,
+    "equity_network_weights_sha256": null,
+    "parameters": {
+      "samples": 192,
+      "adaptation": 1.0,
+      "caution": 0.006,
+      "style_decay": 0.99,
+      "preflop_table": true,
+      "range_weight": 2.5,
+      "call_margin": 0.03544137179472241,
+      "realization": 0.9538643499251365,
+      "raise_margin": 0.046244728490194446,
+      "fold_prior": 0.37036196781968345,
+      "bluff_scale": 0.65,
+      "preflop_raise": 0.543415645869242
+    }
+  },
+  "external_opponent_sha256": {
+    "tools/slow_expert_opponent.py": "688c73a9851f85a7291a432d0c025b59f1a8b9471841f0dc6a8e40ce1e78b6cb"
+  },
+  "candidate_parameters": {
+    "samples": 256,
+    "refine_samples": 768,
+    "refine_z": 1.25,
+    "refine_min_pot": 12,
+    "ess_floor": 48,
+    "draw_model": true,
+    "sensible_checks": false,
+    "adaptation": 1.0,
+    "caution": 0.006,
+    "style_decay": 0.99,
+    "preflop_table": true,
+    "range_weight": 2.5,
+    "call_margin": 0.03544137179472241,
+    "realization": 0.9538643499251365,
+    "raise_margin": 0.046244728490194446,
+    "fold_prior": 0.37036196781968345,
+    "bluff_scale": 0.65,
+    "preflop_raise": 0.543415645869242
+  },
+  "incumbent_parameters": {
+    "samples": 192,
+    "adaptation": 1.0,
+    "caution": 0.006,
+    "style_decay": 0.99,
+    "preflop_table": true,
+    "range_weight": 2.5,
+    "call_margin": 0.03544137179472241,
+    "realization": 0.9538643499251365,
+    "raise_margin": 0.046244728490194446,
+    "fold_prior": 0.37036196781968345,
+    "bluff_scale": 0.65,
+    "preflop_raise": 0.543415645869242
+  },
+  "source_sha256_at_start": {
+    "strategy.py": "2120570c7dd30dedad59e0f43683909ffce77b060303937ea3755d3d0f0186ac",
+    "opponent_model.py": "5c50216228bb3e14afc0cb37df11bca6bba5b6f0acabb7683deb2537518f65e9",
+    "policy.json": "3fd5cfe25b9de9bc41a7d2de6a3bf20fcfe352bf03e4ff89b74473cceaea4d08",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "tools/style_opponents.py": "08a322a95feeb44437bb5a72eaa0f946c17e0dbfc09643360ee518d9298ded77",
+    "tools/fast_range_opponent.py": "a8378471c862993a45145a2ecdd991647aa63deb52da78577d315b551b94d5d5",
+    "tools/strength_opponents.py": "7b236c7c29e92b5bc1656ecee01f23b63b90570ece625a89e1c4776b034b50c8",
+    "tools/evaluate_strength.py": "18fe2940f1af1d7071cfa0027bb7c89d7b4fa1236e99c633dbfcb59eac69abaf",
+    "equity_network.py": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network.npz": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1"
+  },
+  "timing_scope": "Direct calls; excludes HTTP and has no time-bank enforcement",
+  "uncertainty_scope": "Synthetic profiles; equal-weight profile averages clustered by shared seed/deal, plus 50-deal moving-block bootstrap. No claim against unknown tournament submissions.",
+  "matches": [
+    {
+      "strategy": "incumbent",
+      "opponent": "tools/slow_expert_opponent.py",
+      "seed": "strength-dev101",
+      "deals": 100,
+      "mean_bb_per_deal": 0.9,
+      "ci95": [
+        -0.6951115726785161,
+        2.4951115726785162
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        -2.0,
+        0.0,
+        0.0,
+        8.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        37.0,
+        0.0,
+        -5.0,
+        -1.0,
+        3.0,
+        -52.0,
+        0.0,
+        1.0,
+        5.0,
+        -1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        24.0,
+        9.0,
+        -2.0,
+        -2.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        30.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        5.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        7.0,
+        -4.0,
+        0.0,
+        1.0,
+        4.0,
+        10.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        -1.0,
+        4.0,
+        0.0,
+        -1.0,
+        -3.0,
+        -16.0,
+        0.0,
+        -2.0,
+        0.0,
+        -7.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        -1.0,
+        3.0,
+        0.0,
+        1.0,
+        1.0,
+        -6.0,
+        1.0,
+        3.0,
+        1.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 355,
+            "seconds": 10.028733343995555,
+            "max_decision_ms": 2550.2787030000036,
+            "errors": 0,
+            "actions": {
+              "FOLD": 29,
+              "CHECK_CALL": 220,
+              "RAISE_HALF": 73,
+              "RAISE_POT": 33
+            },
+            "by_street": [
+              {
+                "calls": 103,
+                "raises": 28,
+                "pot_raises": 0
+              },
+              {
+                "calls": 111,
+                "raises": 41,
+                "pot_raises": 9
+              },
+              {
+                "calls": 80,
+                "raises": 26,
+                "pot_raises": 15
+              },
+              {
+                "calls": 61,
+                "raises": 11,
+                "pot_raises": 9
+              }
+            ]
+          },
+          {
+            "calls": 388,
+            "seconds": 46.37660475898883,
+            "max_decision_ms": 5634.582513000169,
+            "errors": 0,
+            "actions": {
+              "FOLD": 30,
+              "CHECK_CALL": 313,
+              "RAISE_HALF": 5,
+              "RAISE_POT": 40
+            },
+            "by_street": [
+              {
+                "calls": 113,
+                "raises": 5,
+                "pot_raises": 5
+              },
+              {
+                "calls": 122,
+                "raises": 18,
+                "pot_raises": 18
+              },
+              {
+                "calls": 91,
+                "raises": 10,
+                "pot_raises": 7
+              },
+              {
+                "calls": 62,
+                "raises": 12,
+                "pot_raises": 10
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 347,
+            "seconds": 18.69587328400212,
+            "max_decision_ms": 5283.907763999196,
+            "errors": 0,
+            "actions": {
+              "FOLD": 36,
+              "CHECK_CALL": 221,
+              "RAISE_HALF": 53,
+              "RAISE_POT": 37
+            },
+            "by_street": [
+              {
+                "calls": 108,
+                "raises": 23,
+                "pot_raises": 1
+              },
+              {
+                "calls": 106,
+                "raises": 33,
+                "pot_raises": 13
+              },
+              {
+                "calls": 78,
+                "raises": 21,
+                "pot_raises": 12
+              },
+              {
+                "calls": 55,
+                "raises": 13,
+                "pot_raises": 11
+              }
+            ]
+          },
+          {
+            "calls": 363,
+            "seconds": 79.66339842199977,
+            "max_decision_ms": 9435.477642000478,
+            "errors": 0,
+            "actions": {
+              "FOLD": 26,
+              "CHECK_CALL": 286,
+              "RAISE_HALF": 10,
+              "RAISE_POT": 41
+            },
+            "by_street": [
+              {
+                "calls": 112,
+                "raises": 13,
+                "pot_raises": 8
+              },
+              {
+                "calls": 112,
+                "raises": 18,
+                "pot_raises": 17
+              },
+              {
+                "calls": 82,
+                "raises": 12,
+                "pot_raises": 11
+              },
+              {
+                "calls": 57,
+                "raises": 8,
+                "pot_raises": 5
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 176.12395593600013
+    },
+    {
+      "strategy": "candidate",
+      "opponent": "tools/slow_expert_opponent.py",
+      "seed": "strength-dev101",
+      "deals": 100,
+      "mean_bb_per_deal": 0.93,
+      "ci95": [
+        -0.5964312911050552,
+        2.4564312911050554
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        17.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        2.0,
+        37.0,
+        0.0,
+        -3.0,
+        0.0,
+        1.0,
+        -46.0,
+        0.0,
+        1.0,
+        5.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0,
+        12.0,
+        1.0,
+        0.0,
+        0.0,
+        -6.0,
+        -4.0,
+        -3.0,
+        -2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        18.0,
+        1.0,
+        2.0,
+        -16.0,
+        2.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        35.0,
+        -1.0,
+        0.0,
+        1.0,
+        0.0,
+        9.0,
+        1.0,
+        4.0,
+        1.0,
+        -1.0,
+        4.0,
+        0.0,
+        0.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        6.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        -6.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.0,
+        0.0,
+        3.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        3.0,
+        1.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 340,
+            "seconds": 1.0121880369915743,
+            "max_decision_ms": 28.77426699978969,
+            "errors": 0,
+            "actions": {
+              "FOLD": 29,
+              "CHECK_CALL": 217,
+              "RAISE_HALF": 63,
+              "RAISE_POT": 31
+            },
+            "by_street": [
+              {
+                "calls": 103,
+                "raises": 30,
+                "pot_raises": 1
+              },
+              {
+                "calls": 109,
+                "raises": 33,
+                "pot_raises": 12
+              },
+              {
+                "calls": 73,
+                "raises": 19,
+                "pot_raises": 8
+              },
+              {
+                "calls": 55,
+                "raises": 12,
+                "pot_raises": 10
+              }
+            ]
+          },
+          {
+            "calls": 367,
+            "seconds": 11.830253039001036,
+            "max_decision_ms": 4917.433129000528,
+            "errors": 0,
+            "actions": {
+              "FOLD": 28,
+              "CHECK_CALL": 294,
+              "RAISE_HALF": 6,
+              "RAISE_POT": 39
+            },
+            "by_street": [
+              {
+                "calls": 114,
+                "raises": 8,
+                "pot_raises": 8
+              },
+              {
+                "calls": 115,
+                "raises": 20,
+                "pot_raises": 17
+              },
+              {
+                "calls": 79,
+                "raises": 9,
+                "pot_raises": 7
+              },
+              {
+                "calls": 59,
+                "raises": 8,
+                "pot_raises": 7
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 347,
+            "seconds": 0.8348714689882399,
+            "max_decision_ms": 14.190509999934875,
+            "errors": 0,
+            "actions": {
+              "FOLD": 35,
+              "CHECK_CALL": 230,
+              "RAISE_HALF": 48,
+              "RAISE_POT": 34
+            },
+            "by_street": [
+              {
+                "calls": 108,
+                "raises": 21,
+                "pot_raises": 1
+              },
+              {
+                "calls": 107,
+                "raises": 32,
+                "pot_raises": 13
+              },
+              {
+                "calls": 79,
+                "raises": 16,
+                "pot_raises": 10
+              },
+              {
+                "calls": 53,
+                "raises": 13,
+                "pot_raises": 10
+              }
+            ]
+          },
+          {
+            "calls": 358,
+            "seconds": 7.041893451006217,
+            "max_decision_ms": 1706.7050779996862,
+            "errors": 0,
+            "actions": {
+              "FOLD": 25,
+              "CHECK_CALL": 283,
+              "RAISE_HALF": 10,
+              "RAISE_POT": 40
+            },
+            "by_street": [
+              {
+                "calls": 110,
+                "raises": 11,
+                "pot_raises": 9
+              },
+              {
+                "calls": 113,
+                "raises": 20,
+                "pot_raises": 15
+              },
+              {
+                "calls": 79,
+                "raises": 13,
+                "pot_raises": 12
+              },
+              {
+                "calls": 56,
+                "raises": 6,
+                "pot_raises": 4
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 32.40693976900002
+    },
+    {
+      "strategy": "incumbent",
+      "opponent": "tools/slow_expert_opponent.py",
+      "seed": "strength-dev307",
+      "deals": 100,
+      "mean_bb_per_deal": 1.17,
+      "ci95": [
+        -0.5766586217718965,
+        2.916658621771896
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        1.0,
+        0.0,
+        -3.0,
+        35.0,
+        0.0,
+        37.0,
+        35.0,
+        0.0,
+        -1.0,
+        0.0,
+        -9.0,
+        0.0,
+        0.0,
+        0.0,
+        -3.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        -1.0,
+        0.0,
+        0.0,
+        -4.0,
+        1.0,
+        -1.0,
+        0.0,
+        25.0,
+        0.0,
+        -3.0,
+        -3.0,
+        1.0,
+        -1.0,
+        0.0,
+        4.0,
+        -28.0,
+        -4.0,
+        -3.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        -2.0,
+        3.0,
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        -3.0,
+        2.0,
+        0.0,
+        0.0,
+        25.0,
+        1.0,
+        0.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        1.0,
+        10.0,
+        0.0,
+        1.0,
+        1.0,
+        22.0,
+        -34.0,
+        0.0,
+        -10.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        2.0,
+        0.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 346,
+            "seconds": 0.3948003029827305,
+            "max_decision_ms": 5.302978999679908,
+            "errors": 0,
+            "actions": {
+              "FOLD": 30,
+              "CHECK_CALL": 221,
+              "RAISE_HALF": 60,
+              "RAISE_POT": 35
+            },
+            "by_street": [
+              {
+                "calls": 103,
+                "raises": 30,
+                "pot_raises": 1
+              },
+              {
+                "calls": 109,
+                "raises": 35,
+                "pot_raises": 13
+              },
+              {
+                "calls": 80,
+                "raises": 21,
+                "pot_raises": 13
+              },
+              {
+                "calls": 54,
+                "raises": 9,
+                "pot_raises": 8
+              }
+            ]
+          },
+          {
+            "calls": 367,
+            "seconds": 6.209986755003229,
+            "max_decision_ms": 1963.9423850003368,
+            "errors": 0,
+            "actions": {
+              "FOLD": 29,
+              "CHECK_CALL": 290,
+              "RAISE_HALF": 7,
+              "RAISE_POT": 41
+            },
+            "by_street": [
+              {
+                "calls": 114,
+                "raises": 5,
+                "pot_raises": 4
+              },
+              {
+                "calls": 117,
+                "raises": 21,
+                "pot_raises": 18
+              },
+              {
+                "calls": 83,
+                "raises": 15,
+                "pot_raises": 14
+              },
+              {
+                "calls": 53,
+                "raises": 7,
+                "pot_raises": 5
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 342,
+            "seconds": 0.24455114799638977,
+            "max_decision_ms": 3.175204999934067,
+            "errors": 0,
+            "actions": {
+              "FOLD": 29,
+              "CHECK_CALL": 221,
+              "RAISE_HALF": 57,
+              "RAISE_POT": 35
+            },
+            "by_street": [
+              {
+                "calls": 107,
+                "raises": 25,
+                "pot_raises": 1
+              },
+              {
+                "calls": 101,
+                "raises": 32,
+                "pot_raises": 11
+              },
+              {
+                "calls": 80,
+                "raises": 24,
+                "pot_raises": 13
+              },
+              {
+                "calls": 54,
+                "raises": 11,
+                "pot_raises": 10
+              }
+            ]
+          },
+          {
+            "calls": 375,
+            "seconds": 4.198780385995633,
+            "max_decision_ms": 1557.620720000159,
+            "errors": 0,
+            "actions": {
+              "FOLD": 28,
+              "CHECK_CALL": 299,
+              "RAISE_HALF": 7,
+              "RAISE_POT": 41
+            },
+            "by_street": [
+              {
+                "calls": 114,
+                "raises": 15,
+                "pot_raises": 13
+              },
+              {
+                "calls": 112,
+                "raises": 15,
+                "pot_raises": 12
+              },
+              {
+                "calls": 88,
+                "raises": 13,
+                "pot_raises": 11
+              },
+              {
+                "calls": 61,
+                "raises": 5,
+                "pot_raises": 5
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 11.2142393489994
+    },
+    {
+      "strategy": "candidate",
+      "opponent": "tools/slow_expert_opponent.py",
+      "seed": "strength-dev307",
+      "deals": 100,
+      "mean_bb_per_deal": 0.935,
+      "ci95": [
+        -0.8312893057240516,
+        2.7012893057240515
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        1.0,
+        0.0,
+        -1.0,
+        35.0,
+        0.0,
+        37.0,
+        35.0,
+        0.0,
+        -1.0,
+        0.0,
+        -5.0,
+        0.0,
+        0.0,
+        -34.0,
+        -3.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        1.0,
+        -3.0,
+        0.0,
+        5.0,
+        -3.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        -28.0,
+        9.0,
+        -5.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        -9.0,
+        0.0,
+        4.0,
+        -1.0,
+        0.0,
+        -3.0,
+        -3.0,
+        0.0,
+        5.0,
+        0.0,
+        1.0,
+        2.0,
+        1.0,
+        0.0,
+        -3.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.5,
+        2.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        11.0,
+        2.0,
+        1.0,
+        -1.0,
+        11.0,
+        -14.0,
+        39.0,
+        1.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        -1.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 345,
+            "seconds": 1.2883419769868851,
+            "max_decision_ms": 190.52304999968328,
+            "errors": 0,
+            "actions": {
+              "FOLD": 34,
+              "CHECK_CALL": 233,
+              "RAISE_HALF": 49,
+              "RAISE_POT": 29
+            },
+            "by_street": [
+              {
+                "calls": 103,
+                "raises": 30,
+                "pot_raises": 1
+              },
+              {
+                "calls": 108,
+                "raises": 22,
+                "pot_raises": 11
+              },
+              {
+                "calls": 77,
+                "raises": 17,
+                "pot_raises": 10
+              },
+              {
+                "calls": 57,
+                "raises": 9,
+                "pot_raises": 7
+              }
+            ]
+          },
+          {
+            "calls": 355,
+            "seconds": 16.62020644598124,
+            "max_decision_ms": 3217.032673999711,
+            "errors": 0,
+            "actions": {
+              "FOLD": 28,
+              "CHECK_CALL": 281,
+              "RAISE_HALF": 7,
+              "RAISE_POT": 39
+            },
+            "by_street": [
+              {
+                "calls": 114,
+                "raises": 7,
+                "pot_raises": 6
+              },
+              {
+                "calls": 107,
+                "raises": 19,
+                "pot_raises": 14
+              },
+              {
+                "calls": 77,
+                "raises": 12,
+                "pot_raises": 12
+              },
+              {
+                "calls": 57,
+                "raises": 8,
+                "pot_raises": 7
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 335,
+            "seconds": 0.6944753319958181,
+            "max_decision_ms": 19.28319000035117,
+            "errors": 0,
+            "actions": {
+              "FOLD": 29,
+              "CHECK_CALL": 229,
+              "RAISE_HALF": 51,
+              "RAISE_POT": 26
+            },
+            "by_street": [
+              {
+                "calls": 106,
+                "raises": 24,
+                "pot_raises": 0
+              },
+              {
+                "calls": 102,
+                "raises": 29,
+                "pot_raises": 10
+              },
+              {
+                "calls": 74,
+                "raises": 15,
+                "pot_raises": 9
+              },
+              {
+                "calls": 53,
+                "raises": 9,
+                "pot_raises": 7
+              }
+            ]
+          },
+          {
+            "calls": 362,
+            "seconds": 7.264061422998566,
+            "max_decision_ms": 2768.0727130000378,
+            "errors": 0,
+            "actions": {
+              "FOLD": 27,
+              "CHECK_CALL": 296,
+              "RAISE_HALF": 3,
+              "RAISE_POT": 36
+            },
+            "by_street": [
+              {
+                "calls": 114,
+                "raises": 11,
+                "pot_raises": 11
+              },
+              {
+                "calls": 110,
+                "raises": 15,
+                "pot_raises": 13
+              },
+              {
+                "calls": 80,
+                "raises": 9,
+                "pot_raises": 8
+              },
+              {
+                "calls": 58,
+                "raises": 4,
+                "pot_raises": 4
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 26.452083571999538
+    }
+  ],
+  "paired_improvements": [
+    {
+      "opponent": "tools/slow_expert_opponent.py",
+      "seed": "strength-dev101",
+      "deals": 100,
+      "mean_bb_per_deal": 0.03,
+      "ci95": [
+        -1.032803223802625,
+        1.092803223802625
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        -2.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        -2.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        2.0,
+        -3.0,
+        1.0,
+        0.0,
+        0.0,
+        -30.0,
+        -13.0,
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -12.0,
+        0.0,
+        0.0,
+        -18.0,
+        0.0,
+        0.0,
+        -4.0,
+        0.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        28.0,
+        3.0,
+        0.0,
+        0.0,
+        -4.0,
+        -1.0,
+        1.0,
+        3.0,
+        0.0,
+        0.0,
+        2.0,
+        -1.0,
+        0.0,
+        -1.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        5.0,
+        17.0,
+        0.0,
+        3.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "opponent": "tools/slow_expert_opponent.py",
+      "seed": "strength-dev307",
+      "deals": 100,
+      "mean_bb_per_deal": -0.235,
+      "ci95": [
+        -1.6764751550499448,
+        1.206475155049945
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        -34.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.0,
+        -1.0,
+        0.0,
+        1.0,
+        -28.0,
+        0.0,
+        8.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        -4.0,
+        0.0,
+        13.0,
+        -2.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        1.0,
+        0.0,
+        -2.0,
+        0.0,
+        -1.0,
+        2.0,
+        -12.0,
+        0.0,
+        6.0,
+        -1.0,
+        0.0,
+        -4.0,
+        -4.0,
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        -1.0,
+        0.0,
+        -6.0,
+        0.0,
+        0.0,
+        -25.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        -4.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        0.0,
+        -2.0,
+        -11.0,
+        20.0,
+        39.0,
+        11.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -4.0,
+        0.0,
+        -1.0,
+        -1.0
+      ]
+    }
+  ],
+  "elapsed_seconds": 246.21216054900015,
+  "total_hands": 800,
+  "candidate_aggregate": {
+    "tools/slow_expert_opponent.py": {
+      "deals": 200,
+      "mean_bb_per_deal": 0.9325,
+      "ci95": [
+        -0.23180076652238923,
+        2.096800766522389
+      ],
+      "verdict": "CHOP"
+    }
+  },
+  "incumbent_aggregate": {
+    "tools/slow_expert_opponent.py": {
+      "deals": 200,
+      "mean_bb_per_deal": 1.035,
+      "ci95": [
+        -0.1448821975947452,
+        2.2148821975947453
+      ],
+      "verdict": "CHOP"
+    }
+  },
+  "improvement_aggregate": {
+    "tools/slow_expert_opponent.py": {
+      "deals": 200,
+      "mean_bb_per_deal": -0.1025,
+      "ci95": [
+        -0.9958979209601282,
+        0.7908979209601281
+      ],
+      "verdict": "CHOP"
+    }
+  },
+  "clustered_improvement": {
+    "deals": 200,
+    "mean_bb_per_deal": -0.1025,
+    "ci95": [
+      -0.9958979209601282,
+      0.7908979209601281
+    ],
+    "verdict": "CHOP",
+    "profiles": [
+      "tools/slow_expert_opponent.py"
+    ],
+    "independent_card_clusters": 200,
+    "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+    "block_bootstrap_ci95": [
+      -1.1355625,
+      0.9225624999999996
+    ],
+    "block_bootstrap_deals": 20,
+    "block_bootstrap_verdict": "CHOP"
+  },
+  "clustered_improvement_external": {
+    "deals": 200,
+    "mean_bb_per_deal": -0.1025,
+    "ci95": [
+      -0.9958979209601282,
+      0.7908979209601281
+    ],
+    "verdict": "CHOP",
+    "profiles": [
+      "tools/slow_expert_opponent.py"
+    ],
+    "independent_card_clusters": 200,
+    "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+    "block_bootstrap_ci95": [
+      -1.1355625,
+      0.9225624999999996
+    ],
+    "block_bootstrap_deals": 20,
+    "block_bootstrap_verdict": "CHOP"
+  },
+  "action_summary": {
+    "tools/slow_expert_opponent.py": {
+      "incumbent": {
+        "calls": 1390,
+        "half_raises": 243,
+        "pot_raises": 140,
+        "raise_fraction": 0.2755395683453237,
+        "pot_raise_fraction": 0.10071942446043165,
+        "raises_per_hand": 0.9575,
+        "pot_raises_per_hand": 0.35,
+        "direct_seconds": 29.363958078976793,
+        "max_decision_ms": 5283.907763999196,
+        "errors": 0
+      },
+      "candidate": {
+        "calls": 1367,
+        "half_raises": 211,
+        "pot_raises": 120,
+        "raise_fraction": 0.2421360643745428,
+        "pot_raise_fraction": 0.08778346744696415,
+        "raises_per_hand": 0.8275,
+        "pot_raises_per_hand": 0.3,
+        "direct_seconds": 3.8298768149625175,
+        "max_decision_ms": 190.52304999968328,
+        "errors": 0
+      }
+    }
+  },
+  "source_sha256_at_end": {
+    "strategy.py": "2120570c7dd30dedad59e0f43683909ffce77b060303937ea3755d3d0f0186ac",
+    "opponent_model.py": "5c50216228bb3e14afc0cb37df11bca6bba5b6f0acabb7683deb2537518f65e9",
+    "policy.json": "3fd5cfe25b9de9bc41a7d2de6a3bf20fcfe352bf03e4ff89b74473cceaea4d08",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "tools/style_opponents.py": "08a322a95feeb44437bb5a72eaa0f946c17e0dbfc09643360ee518d9298ded77",
+    "tools/fast_range_opponent.py": "a8378471c862993a45145a2ecdd991647aa63deb52da78577d315b551b94d5d5",
+    "tools/strength_opponents.py": "9c5651616a3afccb4d23f17a06a328fc42c3d5e287a84e26afcd5e0094643493",
+    "tools/evaluate_strength.py": "18fe2940f1af1d7071cfa0027bb7c89d7b4fa1236e99c633dbfcb59eac69abaf",
+    "equity_network.py": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network.npz": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1"
+  },
+  "runtime_source_unchanged": true,
+  "shared_runtime_unchanged": true
+}

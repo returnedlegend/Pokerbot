@@ -1,18 +1,31 @@
 {
-  "name": "ShortStack Adaptive",
+  "name": "ShortStack Neural",
   "parameters": {
     "bluff_scale": 0.65,
     "call_margin": 0.03544137179472241,
     "fold_prior": 0.37036196781968345,
     "preflop_raise": 0.543415645869242,
-    "raise_margin": 0.046244728490194446,
+    "raise_margin": 0.025,
     "range_weight": 2.5,
     "realization": 0.9538643499251365,
     "samples": 192,
     "preflop_table": true,
     "adaptation": 1.0,
     "caution": 0.006,
-    "style_decay": 0.99
+    "style_decay": 0.99,
+    "refine_samples": 192,
+    "refine_z": 1.25,
+    "refine_min_pot": 12,
+    "ess_floor": 48,
+    "draw_model": false,
+    "sensible_checks": false,
+    "neural_anchor": true,
+    "anchor_error": 0.022,
+    "showdown_learning": false,
+    "river_mix": 0.0,
+    "river_range": false,
+    "future_cap": true,
+    "pot_margin": 0.046244728490194446
   },
   "selection": {
     "method": "development-only evolutionary tuning followed by range and preflop-table ablations",
@@ -44,6 +57,23 @@
         "adapt-hold809"
       ],
       "baseline_commit": "50b4682550455b60bf262fe0a09c60dc6269e1a2"
+    },
+    "neural_revision": {
+      "method": "calm split-margin policy with covariance-weighted neural equity anchor; all-in/future-loss-bound corrections; failed draw-range/CFR/refinement variants disabled",
+      "baseline_commit": "97883009569ad2d383b8145e46ee642262390049",
+      "development_seeds": [
+        "strength-dev101",
+        "strength-dev307",
+        "strength-dev919",
+        "strength-dev149"
+      ],
+      "validation_seeds": [
+        "strength-hold211",
+        "strength-hold503",
+        "strength-hold907"
+      ],
+      "neural_training": "80000 random flop/turn positions,384 legal rollouts each; independent1500x4096 validation and8fixedboardsx64x2048 validation",
+      "selection_caveat": "Development shows robust incumbent gains but not a statistically established balanced-field EV improvement. NN incremental match contribution is uncertain."
     }
   }
 }

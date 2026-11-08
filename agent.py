@@ -25,6 +25,11 @@ need to change it, and if you break it the judge can't talk to your bot.
 import os
 import traceback
 
+# Match the tournament's one-CPU limits when running outside its base image.
+# Set these before strategy imports NumPy/Numba; preserve explicit user settings.
+for _thread_setting in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'NUMBA_NUM_THREADS'):
+    os.environ.setdefault(_thread_setting, '1')
+
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse

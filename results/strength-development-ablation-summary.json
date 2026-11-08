@@ -1,0 +1,467 @@
+{
+  "pre-nn": {
+    "improvement": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.0455,
+      "ci95": [
+        -0.32868724332279076,
+        0.2376872433227908
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "incumbent",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.2536025,
+        0.16090999999999994
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    },
+    "external_improvement": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.13366666666666666,
+      "ci95": [
+        -0.4439021964474856,
+        0.17656886311415226
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.3656277777777777,
+        0.08900277777777774
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    },
+    "worst_external_profile": "fast_range",
+    "worst_external_result": {
+      "deals": 500,
+      "mean_bb_per_deal": 0.739,
+      "ci95": [
+        0.2411608118606024,
+        1.2368391881393976
+      ],
+      "verdict": "WIN"
+    },
+    "raises_per_hand": 0.9494,
+    "pot_raises_per_hand": 0.3498,
+    "raise_fraction": 0.26428014697695135,
+    "pot_raise_fraction": 0.09737223026389044
+  },
+  "nn-old-checks": {
+    "improvement": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.07990000000000001,
+      "ci95": [
+        -0.36256216048191636,
+        0.2027621604819163
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "incumbent",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.27514,
+        0.10300999999999993
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    },
+    "external_improvement": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.10166666666666667,
+      "ci95": [
+        -0.4056403749547584,
+        0.20230704162142504
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.29693055555555553,
+        0.09413055555555548
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    },
+    "worst_external_profile": "draw_range",
+    "worst_external_result": {
+      "deals": 500,
+      "mean_bb_per_deal": 0.879,
+      "ci95": [
+        0.4399859965111379,
+        1.318014003488862
+      ],
+      "verdict": "WIN"
+    },
+    "raises_per_hand": 0.8793,
+    "pot_raises_per_hand": 0.3431,
+    "raise_fraction": 0.24361389704660055,
+    "pot_raise_fraction": 0.09505735025211946
+  },
+  "nn": {
+    "improvement": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.0627,
+      "ci95": [
+        -0.3476985179736314,
+        0.2222985179736314
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "incumbent",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.31693,
+        0.16491249999999993
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    },
+    "external_improvement": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.1261111111111111,
+      "ci95": [
+        -0.4359329269272427,
+        0.18371070470502057
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.38834166666666664,
+        0.11379999999999987
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    },
+    "worst_external_profile": "adaptive_pressure",
+    "worst_external_result": {
+      "deals": 500,
+      "mean_bb_per_deal": 0.851,
+      "ci95": [
+        0.14127201146338864,
+        1.5607279885366112
+      ],
+      "verdict": "WIN"
+    },
+    "raises_per_hand": 0.8627,
+    "pot_raises_per_hand": 0.3363,
+    "raise_fraction": 0.23924015529672768,
+    "pot_raise_fraction": 0.09326123128119801
+  },
+  "nn_minus_pre-nn": {
+    "aggregate": {
+      "adaptive_pressure": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.288,
+        "ci95": [
+          -0.9780815587847203,
+          0.40208155878472035
+        ],
+        "verdict": "CHOP"
+      },
+      "changing": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.108,
+        "ci95": [
+          -0.9329597436921544,
+          0.7169597436921544
+        ],
+        "verdict": "CHOP"
+      },
+      "changing_reverse": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.44,
+        "ci95": [
+          -0.40566930133145357,
+          1.2856693013314535
+        ],
+        "verdict": "CHOP"
+      },
+      "draw_range": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.236,
+        "ci95": [
+          -0.5745088787828609,
+          0.10250887878286097
+        ],
+        "verdict": "CHOP"
+      },
+      "fast_range": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.286,
+        "ci95": [
+          -0.269760101080228,
+          0.841760101080228
+        ],
+        "verdict": "CHOP"
+      },
+      "incumbent": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.24,
+        "ci95": [
+          -0.602133931091932,
+          0.12213393109193205
+        ],
+        "verdict": "CHOP"
+      },
+      "loose_aggressive": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.334,
+        "ci95": [
+          -0.8588555416425134,
+          1.5268555416425136
+        ],
+        "verdict": "CHOP"
+      },
+      "loose_passive": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.208,
+        "ci95": [
+          -0.5144776532458413,
+          0.09847765324584132
+        ],
+        "verdict": "CHOP"
+      },
+      "selective_aggressive": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.078,
+        "ci95": [
+          -0.44798112332610446,
+          0.6039811233261044
+        ],
+        "verdict": "CHOP"
+      },
+      "tight_passive": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.23,
+        "ci95": [
+          -0.5858148405019707,
+          0.1258148405019707
+        ],
+        "verdict": "CHOP"
+      }
+    },
+    "clustered": {
+      "deals": 500,
+      "mean_bb_per_deal": -0.017200000000000007,
+      "ci95": [
+        -0.2667645271036911,
+        0.23236452710369104
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "incumbent",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.24121499999999998,
+        0.19963999999999982
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    }
+  },
+  "nn_minus_nn-old-checks": {
+    "aggregate": {
+      "adaptive_pressure": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.03,
+        "ci95": [
+          -0.6286083663569572,
+          0.5686083663569571
+        ],
+        "verdict": "CHOP"
+      },
+      "changing": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.024,
+        "ci95": [
+          -0.7520818357030503,
+          0.8000818357030504
+        ],
+        "verdict": "CHOP"
+      },
+      "changing_reverse": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.222,
+        "ci95": [
+          -0.948703849819088,
+          0.504703849819088
+        ],
+        "verdict": "CHOP"
+      },
+      "draw_range": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.008,
+        "ci95": [
+          -0.15903060654336523,
+          0.17503060654336525
+        ],
+        "verdict": "CHOP"
+      },
+      "fast_range": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.018,
+        "ci95": [
+          -0.431203332793509,
+          0.39520333279350894
+        ],
+        "verdict": "CHOP"
+      },
+      "incumbent": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.392,
+        "ci95": [
+          0.0676365988783964,
+          0.7163634011216036
+        ],
+        "verdict": "WIN"
+      },
+      "loose_aggressive": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.0,
+        "ci95": [
+          -1.0147275385812244,
+          1.0147275385812244
+        ],
+        "verdict": "CHOP"
+      },
+      "loose_passive": {
+        "deals": 500,
+        "mean_bb_per_deal": -0.062,
+        "ci95": [
+          -0.469353366144209,
+          0.34535336614420903
+        ],
+        "verdict": "CHOP"
+      },
+      "selective_aggressive": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.07,
+        "ci95": [
+          -0.192714091185484,
+          0.332714091185484
+        ],
+        "verdict": "CHOP"
+      },
+      "tight_passive": {
+        "deals": 500,
+        "mean_bb_per_deal": 0.01,
+        "ci95": [
+          -0.40521273548799397,
+          0.425212735487994
+        ],
+        "verdict": "CHOP"
+      }
+    },
+    "clustered": {
+      "deals": 500,
+      "mean_bb_per_deal": 0.017199999999999997,
+      "ci95": [
+        -0.20155850165468864,
+        0.23595850165468862
+      ],
+      "verdict": "CHOP",
+      "profiles": [
+        "adaptive_pressure",
+        "changing",
+        "changing_reverse",
+        "draw_range",
+        "fast_range",
+        "incumbent",
+        "loose_aggressive",
+        "loose_passive",
+        "selective_aggressive",
+        "tight_passive"
+      ],
+      "independent_card_clusters": 500,
+      "unit": "bb per duplicate deal, profiles averaged within seed/deal",
+      "block_bootstrap_ci95": [
+        -0.14819999999999997,
+        0.17600499999999994
+      ],
+      "block_bootstrap_deals": 50,
+      "block_bootstrap_verdict": "CHOP"
+    }
+  }
+}

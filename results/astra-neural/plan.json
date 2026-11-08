@@ -1,0 +1,21 @@
+{
+  "experiment": "Frozen neural candidate versus direct gpt-6-astra decisions",
+  "matches": 2,
+  "deals_per_half": 50,
+  "planned_actual_hands": 200,
+  "independent_deal_pairs": 100,
+  "opponent_contexts": 4,
+  "same_candidate_all_matches": true,
+  "tuning_after_start": false,
+  "time_limits": "Untimed exhibition; each LLM action individually chosen, no automated policy or MC equity tool",
+  "source_sha256": {
+    "agent.py": "e32bdc4d54a4f7be50c323e08ac3cc2fd70f267e8ee50fbdb85f2c1dd6bed8d0",
+    "strategy.py": "1a92e94f52c522513f8f1eed46170d4a262e0f57b2775f41c4261b61defcefaa",
+    "opponent_model.py": "ca642d5b5f87a266c5b6ded641803de44c1cbaf55a01874974e3e009dbebb881",
+    "equity_network.py": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network.npz": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1",
+    "policy.json": "81411e0ee1c83d010b761673ff4b0828dadd29ee18ba77c87b776ecfbb0ada30",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab"
+  }
+}

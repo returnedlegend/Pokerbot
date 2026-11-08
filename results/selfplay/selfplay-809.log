@@ -1,0 +1,23 @@
+waiting for agent1 at http://localhost:5018 ...
+waiting for agent2 at http://localhost:5019 ...
+agent1 = jr007 / ShortStack (http://localhost:5018)
+agent2 = jr007 / ShortStack (http://localhost:5019)
+
+Duplicate match: 1000 deals (2000 hands), seed selfplay-809
+agent1: +0.000 bb/deal  (std 0.00, stderr 0.000)
+Confidence interval (z=1.96): [+0.000, +0.000] bb/deal
+Reason: interval [+0.000, +0.000] includes 0
+half1: agent1 +447 chips, agent2 -447 chips
+half2: agent1 -447 chips, agent2 +447 chips
+Faults:
+  agent1 half1: thinking 5.35s of 8s (wall 8.71s), calls 3354, errors 0
+  agent1 half2: thinking 2.57s of 8s (wall 5.95s), calls 3381, errors 0
+  agent2 half1: thinking 5.09s of 8s (wall 8.47s), calls 3381, errors 0
+  agent2 half2: thinking 2.58s of 8s (wall 5.94s), calls 3354, errors 0
+Speed: 2000 hands in 30.42s (66 hands/s)
+
+============================================================
+  VERDICT: CHOP  (too close to call - half a win each)
+  Points: agent1 0.5, agent2 0.5
+============================================================
+RESULT: CHOP

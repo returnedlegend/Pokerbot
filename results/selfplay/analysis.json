@@ -1,0 +1,335 @@
+{
+  "source_commit": "97883009569ad2d383b8145e46ee642262390049",
+  "configuration": "Two independent processes running identical current agent.py through unchanged official judge; per-half memory reset.",
+  "expected_match_count": 3,
+  "completed_match_count": 3,
+  "all_requested_matches_complete": true,
+  "duplicate_deals": 3000,
+  "actual_hands": 6000,
+  "matches": [
+    {
+      "seed": "selfplay-101",
+      "duplicate_deals": 1000,
+      "actual_hands": 2000,
+      "verdict": "CHOP",
+      "mean_bb_per_duplicate_deal": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "all_paired_outcomes_zero": true,
+      "seat_level_half_logs_identical": true,
+      "full_logs_present": true,
+      "half_totals_chips": {
+        "half1": {
+          "agent1": 176,
+          "agent2": -176
+        },
+        "half2": {
+          "agent1": -176,
+          "agent2": 176
+        }
+      },
+      "source_file": "results/selfplay/selfplay-101.json",
+      "sha256": "507f7439e58b6fbad67710bf4b1abbdf12d99ab39f28ba8e3add08bd88a75bd7"
+    },
+    {
+      "seed": "selfplay-307",
+      "duplicate_deals": 1000,
+      "actual_hands": 2000,
+      "verdict": "CHOP",
+      "mean_bb_per_duplicate_deal": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "all_paired_outcomes_zero": true,
+      "seat_level_half_logs_identical": true,
+      "full_logs_present": true,
+      "half_totals_chips": {
+        "half1": {
+          "agent1": 526,
+          "agent2": -526
+        },
+        "half2": {
+          "agent1": -526,
+          "agent2": 526
+        }
+      },
+      "source_file": "results/selfplay/selfplay-307.json",
+      "sha256": "a2284178549aa13c239f0969689595cc93d23966723fa4846832c88140cfc185"
+    },
+    {
+      "seed": "selfplay-809",
+      "duplicate_deals": 1000,
+      "actual_hands": 2000,
+      "verdict": "CHOP",
+      "mean_bb_per_duplicate_deal": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "all_paired_outcomes_zero": true,
+      "seat_level_half_logs_identical": true,
+      "full_logs_present": true,
+      "half_totals_chips": {
+        "half1": {
+          "agent1": 447,
+          "agent2": -447
+        },
+        "half2": {
+          "agent1": -447,
+          "agent2": 447
+        }
+      },
+      "source_file": "results/selfplay/selfplay-809.json",
+      "sha256": "e5b224fbbaf7f0d83987cfc0fcda57910c7b36920d805480cdfe9b3e31ff89cb"
+    }
+  ],
+  "reliability": {
+    "bot_half_observations": 12,
+    "errors": 0,
+    "skipped_calls": 0,
+    "forfeited_halves": 0,
+    "time_bank_exhausted_halves": 0,
+    "charged_seconds_min": 2.535513,
+    "charged_seconds_max": 5.354274,
+    "bank_seconds_per_bot_per_half": 8,
+    "minimum_bank_remaining_seconds": 2.645726,
+    "timing_by_bot_half": [
+      {
+        "seed": "selfplay-101",
+        "bot": "agent1",
+        "half": 1,
+        "calls": 3380,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.559265,
+        "wall_seconds": 5.937691
+      },
+      {
+        "seed": "selfplay-101",
+        "bot": "agent1",
+        "half": 2,
+        "calls": 3389,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 3.326568,
+        "wall_seconds": 6.71434
+      },
+      {
+        "seed": "selfplay-101",
+        "bot": "agent2",
+        "half": 1,
+        "calls": 3389,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.535513,
+        "wall_seconds": 5.921979
+      },
+      {
+        "seed": "selfplay-101",
+        "bot": "agent2",
+        "half": 2,
+        "calls": 3380,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 3.596056,
+        "wall_seconds": 6.973525
+      },
+      {
+        "seed": "selfplay-307",
+        "bot": "agent1",
+        "half": 1,
+        "calls": 3411,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.824482,
+        "wall_seconds": 6.234141
+      },
+      {
+        "seed": "selfplay-307",
+        "bot": "agent1",
+        "half": 2,
+        "calls": 3437,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 3.037796,
+        "wall_seconds": 6.472556
+      },
+      {
+        "seed": "selfplay-307",
+        "bot": "agent2",
+        "half": 1,
+        "calls": 3437,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.789338,
+        "wall_seconds": 6.225325
+      },
+      {
+        "seed": "selfplay-307",
+        "bot": "agent2",
+        "half": 2,
+        "calls": 3411,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.973854,
+        "wall_seconds": 6.383091
+      },
+      {
+        "seed": "selfplay-809",
+        "bot": "agent1",
+        "half": 1,
+        "calls": 3354,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 5.354274,
+        "wall_seconds": 8.705902
+      },
+      {
+        "seed": "selfplay-809",
+        "bot": "agent1",
+        "half": 2,
+        "calls": 3381,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.566113,
+        "wall_seconds": 5.946416
+      },
+      {
+        "seed": "selfplay-809",
+        "bot": "agent2",
+        "half": 1,
+        "calls": 3381,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 5.092162,
+        "wall_seconds": 8.470287
+      },
+      {
+        "seed": "selfplay-809",
+        "bot": "agent2",
+        "half": 2,
+        "calls": 3354,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.583902,
+        "wall_seconds": 5.937082
+      }
+    ]
+  },
+  "behavior": {
+    "logged_actual_hands": 6000,
+    "decisions": 40680,
+    "action_counts": {
+      "CHECK_CALL": 27580,
+      "RAISE_POT": 2140,
+      "FOLD": 4086,
+      "RAISE_HALF": 6874
+    },
+    "detailed_action_counts": {
+      "CALL": 8726,
+      "CHECK": 18854,
+      "RAISE_POT": 2140,
+      "FOLD": 4086,
+      "RAISE_HALF": 6874
+    },
+    "action_fractions": {
+      "CHECK_CALL": 0.6779744346116028,
+      "RAISE_POT": 0.05260570304818092,
+      "FOLD": 0.10044247787610619,
+      "RAISE_HALF": 0.16897738446411012
+    },
+    "actions_by_street": {
+      "PREFLOP": {
+        "CHECK_CALL": 10270,
+        "RAISE_HALF": 2838,
+        "RAISE_POT": 84,
+        "FOLD": 138
+      },
+      "FLOP": {
+        "CHECK_CALL": 7924,
+        "RAISE_POT": 954,
+        "FOLD": 2090,
+        "RAISE_HALF": 2838
+      },
+      "TURN": {
+        "CHECK_CALL": 5474,
+        "RAISE_POT": 698,
+        "RAISE_HALF": 960,
+        "FOLD": 1318
+      },
+      "RIVER": {
+        "CHECK_CALL": 3912,
+        "RAISE_POT": 404,
+        "FOLD": 540,
+        "RAISE_HALF": 238
+      }
+    },
+    "showdown_hands": 1914,
+    "showdown_fraction": 0.319,
+    "fold_ended_hands": 4086,
+    "fold_ended_fraction": 0.681,
+    "fold_streets": {
+      "FLOP": 2090,
+      "RIVER": 540,
+      "TURN": 1318,
+      "PREFLOP": 138
+    },
+    "split_showdowns": 178,
+    "split_showdown_fraction": 0.09299895506792058,
+    "mean_pot_chips": 15.409666666666666,
+    "median_pot_chips": 8.0,
+    "pot_p90_chips": 24,
+    "pot_p95_chips": 48,
+    "max_pot_chips": 160,
+    "at_least_one_player_committed_full_80_chips_hands": 100,
+    "at_least_one_player_committed_full_stack_fraction": 0.016666666666666666,
+    "full_160_chip_showdown_hands": 84,
+    "full_stack_showdown_fraction": 0.014,
+    "half_raises_per_hand": 1.1456666666666666,
+    "pot_raises_per_hand": 0.3566666666666667
+  },
+  "interpretation": [
+    "Identical deterministic policies with fresh per-half memory produce identical seat-level histories after the seat swap, so each paired deal cancels exactly to zero when no timing/error defaults intervene.",
+    "The expected CHOP is a symmetry and reliability check, not evidence of competitive strength or an equilibrium strategy. Identical bots may share exploitable weaknesses.",
+    "The two halves replay identical deals; behavior percentages count actual played hands but should not be treated as 6,000 independent random deals. Runtime timing depends on this host."
+  ]
+}
