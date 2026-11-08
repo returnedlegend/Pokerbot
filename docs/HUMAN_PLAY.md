@@ -3,13 +3,25 @@
 Start the local table from the repository root:
 
 ```sh
-.venv/bin/python tools/human_play.py --port 8080
+npm install
+npm run dev
 ```
 
-Open **http://127.0.0.1:8080** in a browser on the same machine. In this cloud
+Open **http://127.0.0.1:3000** in a browser on the same machine. Node 20 or newer
+is required. The npm launcher serves the table and forwards its API requests
+to the actual Python bot. It reuses an existing jr007 backend or starts it
+with the project's virtual environment. Set up Python and `requirements.txt`
+as described in the repository README when running on a fresh machine.
+
+In this cloud
 environment, open the **Desktop** view and use Chrome there. A localhost URL
 on your own computer reaches your own computer, so run the command locally if
 you want to use your own machine's browser instead.
+
+`npm start` runs the same launcher. Choose another frontend port with
+`npm run dev -- --port 3001`. `POKER_BACKEND_PORT` selects the internal Python
+port, and `POKER_PYTHON` can specify another configured Python interpreter.
+The direct Python entry point remains `python tools/human_play.py --port 8080`.
 
 The table runs the actual validated `strategy.py` policy with the unchanged
 official game and evaluator. This is short-deck five-card Omaha: use exactly

@@ -33,10 +33,13 @@ python -m venv .venv
 To play against jr007 in your browser:
 
 ```sh
-.venv/bin/python tools/human_play.py --port 8080
+npm install
+npm run dev
 ```
 
-Open `http://127.0.0.1:8080` on that machine. In the managed cloud, use the
+Open `http://127.0.0.1:3000` on that machine. The npm launcher starts or reuses
+the Python bot server using the virtual environment above; no additional npm
+dependencies are required. In the managed cloud, use the
 environment's Desktop browser. The table deals five cards, provides the four
 legal action buttons, keeps a session score and reveals the bot's cards only
 at showdown. Each hand resets both stacks to 80 practice chips. See

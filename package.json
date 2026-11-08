@@ -1,0 +1,14 @@
+{
+  "name": "jr007-poker-table",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser table for playing the validated jr007 poker bot",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/dev.mjs",
+    "start": "node tools/dev.mjs",
+    "test:dev": "node --test tools/dev.test.mjs"
+  }
+}
