@@ -1,0 +1,23 @@
+waiting for agent1 at http://localhost:5008 ...
+waiting for agent2 at http://localhost:5009 ...
+agent1 = jr007 / ShortStack (http://localhost:5008)
+agent2 = Independent certification probe / loose_aggressive (http://localhost:5009)
+
+Duplicate match: 1000 deals (2000 hands), seed overnight-runtime-certification-20261108
+agent1: +5.485 bb/deal  (std 16.80, stderr 0.531)
+Confidence interval (z=1.96): [+4.444, +6.526] bb/deal
+Reason: interval [+4.444, +6.526] is entirely above 0
+half1: agent1 +5445 chips, agent2 -5445 chips
+half2: agent1 +5525 chips, agent2 -5525 chips
+Faults:
+  agent1 half1: thinking 3.10s of 8s (wall 6.76s), calls 3669, errors 0
+  agent1 half2: thinking 2.98s of 8s (wall 6.69s), calls 3715, errors 0
+  agent2 half1: thinking 0.79s of 8s (wall 4.18s), calls 3537, errors 0
+  agent2 half2: thinking 0.78s of 8s (wall 4.17s), calls 3546, errors 0
+Speed: 2000 hands in 23.00s (87 hands/s)
+
+============================================================
+  VERDICT: AGENT1 WINS  (jr007 / ShortStack (http://localhost:5008))
+  Points: agent1 1, agent2 0
+============================================================
+RESULT: AGENT1_WIN

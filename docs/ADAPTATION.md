@@ -2,6 +2,8 @@
 
 Historical adaptive revision: `97883009569ad2d383b8145e46ee642262390049`.
 The newer selected policy is documented in [NEURAL_REVISION.md](NEURAL_REVISION.md).
+The earlier Docker-limit claims below are qualified by the later
+[resource-enforcement audit](RUNTIME_LIMITS.md).
 
 This revision responds to learned tendencies rather than mirroring an
 opponent's aggression. It preserves participant `jr007` and the event's

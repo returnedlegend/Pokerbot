@@ -1,0 +1,9 @@
+  ok  GET / answered after 7.6 s: jr007 / ShortStack
+  ok  POST /new-half worked
+  ok  /act preflop, button to act: CHECK_CALL in 3 ms
+  ok  /act preflop, facing a pot raise: CHECK_CALL in 3 ms
+  ok  /act flop, first to act: CHECK_CALL in 2 ms
+  ok  /act flop, facing an all-in (only FOLD or CHECK_CALL): CHECK_CALL in 2 ms
+  ok  /act river, facing a half-pot bet: CHECK_CALL in 3 ms
+  ok  POST /hand-end worked
+SMOKE TEST PASSED

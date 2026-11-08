@@ -1,0 +1,8 @@
+{
+  "measured_tool_sha256": "3244a57aaebb4f2226c80befb12b93f3920cff49c2f1d0fb2c6d0b79c71d2244",
+  "current_tool_sha256": "82283d7ae976dfb7e26d22832189a3ea04d4cedb9a800f6345732f2e0fc23ded",
+  "measurement_report": "results/strict-runtime-certification.json",
+  "post_measurement_change": "Preflight-only rejection of noncanonical ZIP path aliases, with a regression test. Measured runtime, resource launch, monitoring, official rules and canonical current-checkpoint package are unchanged.",
+  "focused_tests": "13 passed: tests/test_certify_overnight.py",
+  "runtime_remeasurement_needed": false
+}

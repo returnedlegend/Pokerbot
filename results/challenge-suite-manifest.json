@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "default_seed": 830907,
+  "profiles": {
+    "challenge_value": {
+      "samples": 384,
+      "call_margin": 0.025,
+      "value_floor": 0.575,
+      "raise_caution": 0.02,
+      "bluff_frequency": 0.025,
+      "trap_frequency": 0.08,
+      "decay": 0.994
+    },
+    "challenge_polarized": {
+      "samples": 256,
+      "call_margin": 0.012,
+      "value_floor": 0.64,
+      "raise_caution": 0.015,
+      "bluff_frequency": 0.21,
+      "trap_frequency": 0.16,
+      "decay": 0.994
+    },
+    "challenge_checkraise": {
+      "samples": 256,
+      "call_margin": 0.015,
+      "value_floor": 0.61,
+      "raise_caution": 0.018,
+      "bluff_frequency": 0.12,
+      "trap_frequency": 0.58,
+      "decay": 0.994
+    },
+    "challenge_adaptive": {
+      "samples": 192,
+      "call_margin": 0.008,
+      "value_floor": 0.58,
+      "raise_caution": 0.015,
+      "bluff_frequency": 0.18,
+      "trap_frequency": 0.12,
+      "decay": 0.994
+    },
+    "challenge_station": {
+      "samples": 128,
+      "call_margin": -0.2,
+      "value_floor": 0.76,
+      "raise_caution": 0.03,
+      "bluff_frequency": 0.0,
+      "trap_frequency": 0.02,
+      "decay": 0.994
+    },
+    "challenge_shifting": {
+      "samples": 256,
+      "call_margin": 0.015,
+      "value_floor": 0.61,
+      "raise_caution": 0.018,
+      "bluff_frequency": 0.12,
+      "trap_frequency": 0.2,
+      "decay": 0.994
+    }
+  },
+  "source_sha256": "f2f7ed027c490afad35b478022118167da8c7e83e287ef1cfa6c9d540f3476f1",
+  "scope": "Synthetic legal-observation stress policies; no human/LLM or equilibrium claim",
+  "verification": {
+    "tests": "tests/test_challenge_opponents.py",
+    "passed": 14,
+    "seconds": 10.56,
+    "cpu_affinity_count": 1,
+    "blas_omp_numba_threads": 1,
+    "purpose": "Legality, deterministic reset, hidden-card invariance, public response accounting and fixed shifts; not win-rate certification"
+  }
+}

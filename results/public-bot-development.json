@@ -1,0 +1,891 @@
+{
+  "phase": "development",
+  "seed": "public-probe-dev-v1",
+  "deals_per_half": 100,
+  "timing_scope": "Direct untimed callbacks; no HTTP or event-bank enforcement. Armaan own wall-clock budget retained.",
+  "source": {
+    "strategy_sha256": "1a92e94f52c522513f8f1eed46170d4a262e0f57b2775f41c4261b61defcefaa",
+    "opponent_model_sha256": "ca642d5b5f87a266c5b6ded641803de44c1cbaf55a01874974e3e009dbebb881",
+    "equity_network_source_sha256": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network_weights_sha256": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1",
+    "river_solver_source_sha256": "a37b5e962b6cc80c2e8da17c09207d1e06128f9f3a11aa18f8264ae8d6416a4a",
+    "river_policy_weights_sha256": "85c8a720d98096f5fffa5ecc45ea896a7d32203dd72184e45add2cd80b5abdd0",
+    "parameters": {
+      "samples": 192,
+      "refine_samples": 192,
+      "refine_z": 1.25,
+      "refine_min_pot": 12,
+      "ess_floor": 48,
+      "draw_model": false,
+      "neural_anchor": true,
+      "river_mix": 0.0,
+      "river_range": false,
+      "anchor_error": 0.022,
+      "sensible_checks": false,
+      "showdown_learning": false,
+      "quality_prior": 12.0,
+      "adaptation": 1.0,
+      "caution": 0.006,
+      "style_decay": 0.99,
+      "preflop_table": true,
+      "range_weight": 2.5,
+      "call_margin": 0.03544137179472241,
+      "future_cap": true,
+      "realization": 0.9538643499251365,
+      "raise_margin": 0.025,
+      "pot_margin": 0.046244728490194446,
+      "fold_prior": 0.37036196781968345,
+      "bluff_scale": 0.65,
+      "preflop_raise": 0.543415645869242
+    }
+  },
+  "public_bots": {
+    "armaan-primary": {
+      "profile": "armaan-primary",
+      "repository": "https://github.com/ArmaanMediratta/heads-up-bundle",
+      "commit": "183342c61239b9df5db22e6fb2cf426d5e2df758",
+      "license": "No explicit license located; private benchmark only, do not redistribute upstream source or weights.",
+      "source_audit": "No runtime outgoing network/shell/eval/pickle or actual hidden-deal access found in selected callback dependencies.",
+      "adapter_changes": [
+        "Omit HTTP server plumbing; call unchanged strategy callbacks.",
+        "Isolated import namespace; share identical official game/evaluator API.",
+        "Seed existing RNGs with 640193 for reproducibility; preserve original wall-time budgeting.",
+        "Escalate swallowed internal errors for audit instead of silently benchmarking a broken fallback."
+      ],
+      "limitations": "Actual primary callbacks; original wall-time sample budgeting retained; mirror detector default remains off.",
+      "files_sha256": {
+        "agent.py": "d2c357b4c55a36a414214263f33817ab3a60cbd8c9ad2ea404e9119a5610ec45",
+        "bot/__init__.py": "7cae61558c8a6a5f4922a6d742bc1de052d6b8d490d583cd12138ba143e81e58",
+        "bot/equity.py": "75d4ed5696210a6a4d9f3d99c1912658442890922df9afc5690ab5b617853087",
+        "bot/fasteval.py": "192f5baf9d0180807745346836bef089c0ec43995203a1afb143430f26e5e5fb",
+        "bot/mirror.py": "fd248fa9659d75259732df05128e135db736136ac753a5214745ac30d4c0ce6b",
+        "bot/opponent.py": "75ad88ac790d6773218579a6ac52451811cc312a00f7308ab5256bf66d187c4c",
+        "bot/policy.py": "2b0aefa96853555de91ad24498510e63920772da867015773b5824bcf8d76ced",
+        "bot/preflop.py": "e8800066bdf8c185e0c82892e6ce28aa83d8b946ac0341b79ef4edf010f9b832",
+        "bot/safety.py": "6ffad99da32cebb2862e274e8e1ce89f4e0d2adba47c69d2cd9120879f50adb7",
+        "bot/timebank.py": "600b8982c0941506213e2f7b621dfb32ac14845fac15367232ef4c96b7ff69dc",
+        "bot/data/preflop.npz": "54e7f7ea8f73daebae7180b73582c99217d319c8b65d5fd3f32bf5bab4780517"
+      }
+    },
+    "dushyant-byte-me": {
+      "profile": "dushyant-byte-me",
+      "repository": "https://github.com/Dushyant-Betala/heads-up-bundle",
+      "commit": "ba64c267aa2e8c442e5e5f824539c400faea7a64",
+      "license": "No explicit license located; private benchmark only, do not redistribute upstream source or weights.",
+      "source_audit": "No runtime outgoing network/shell/eval/pickle or actual hidden-deal access found in selected callback dependencies.",
+      "adapter_changes": [
+        "Omit HTTP server plumbing; call unchanged strategy callbacks.",
+        "Isolated import namespace; share identical official game/evaluator API.",
+        "Seed existing RNGs with 640193 for reproducibility; preserve original wall-time budgeting.",
+        "Escalate swallowed internal errors for audit instead of silently benchmarking a broken fallback."
+      ],
+      "limitations": "Actual Blueprint callbacks and tables; original pace projection assumes 1000 hands even in short screens.",
+      "files_sha256": {
+        "agent.py": "85a38b45e1c242bd350205d938c504bf3b0d7991b9663f8ececbb26547feeb47",
+        "brain.py": "8c6e86e750d55f31992e472cc578805312eab9d9a94a4dd6d0ea0a15fe180a8e",
+        "bot_data/tables.npz": "eee80a29732aafaa29e4a622798f9a92655e1387d45534d9b01c03e176184747",
+        "bot_data/policies.npz": "f932a75ca1933a2f5feb1e9b61fddb917a5de0c58db565950b1d24aa78075d5b"
+      }
+    },
+    "malki-equitynet": {
+      "profile": "malki-equitynet",
+      "repository": "https://github.com/malki-aal/heads-up-bundle",
+      "commit": "70ddc9555b7016898d2b9478e2f67590cc61ffaf",
+      "license": "No explicit license located; private benchmark only, do not redistribute upstream source or weights.",
+      "source_audit": "No runtime outgoing network/shell/eval/pickle or actual hidden-deal access found in selected callback dependencies.",
+      "adapter_changes": [
+        "Omit HTTP server plumbing; call unchanged strategy callbacks.",
+        "Isolated import namespace; share identical official game/evaluator API.",
+        "Seed existing RNGs with 640193 for reproducibility; preserve original wall-time budgeting.",
+        "Escalate swallowed internal errors for audit instead of silently benchmarking a broken fallback."
+      ],
+      "limitations": "Actual default ML callbacks and committed NumPy neural weights, not rules-only mode.",
+      "files_sha256": {
+        "agent.py": "a0f90016ea856ecaff44329a338c24bc99529ddbf614c02e80c0b989d569ed3d",
+        "equity.py": "c6ecffea02e66eeeb9d5ebe7304b44130106fc2a4298a04bb628e6497028d72a",
+        "strategy.py": "f224f680ad4606c5c86eb02f28fd8f3c78ee859d4657796b48a04674f4b28d90",
+        "equity_weights.npz": "31a1f63f5e0698c2e85af94658004809797978c829919be72c3f61e168b6ca92"
+      }
+    }
+  },
+  "matches": [
+    {
+      "strategy": "candidate",
+      "opponent": "public:armaan-primary",
+      "seed": "public-probe-dev-v1",
+      "deals": 100,
+      "mean_bb_per_deal": -1.38,
+      "ci95": [
+        -3.501030340817091,
+        0.7410303408170913
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        3.0,
+        0.0,
+        1.0,
+        -2.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        -27.0,
+        2.0,
+        -32.0,
+        -1.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -34.0,
+        -38.0,
+        0.0,
+        0.0,
+        -1.0,
+        -2.0,
+        1.0,
+        2.0,
+        2.0,
+        32.0,
+        -4.0,
+        0.0,
+        1.0,
+        0.0,
+        -15.0,
+        -1.0,
+        -1.0,
+        -48.0,
+        -3.0,
+        2.0,
+        -1.0,
+        2.0,
+        0.0,
+        -1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        1.0,
+        0.0,
+        0.0,
+        -8.0,
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        -7.0,
+        1.0,
+        46.0,
+        0.0,
+        2.0,
+        -3.0,
+        3.0,
+        -1.0,
+        -36.0,
+        0.0,
+        -1.0,
+        -7.0,
+        1.0,
+        2.0,
+        0.0,
+        4.0,
+        2.0,
+        1.0,
+        1.0,
+        -1.0,
+        0.0,
+        3.0,
+        7.0,
+        -1.0,
+        2.0,
+        0.0,
+        4.0,
+        8.0,
+        2.0,
+        2.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 339,
+            "seconds": 0.2740013589627779,
+            "max_decision_ms": 4.729733000203851,
+            "errors": 0,
+            "actions": {
+              "FOLD": 28,
+              "CHECK_CALL": 219,
+              "RAISE_HALF": 68,
+              "RAISE_POT": 24
+            },
+            "by_street": [
+              {
+                "calls": 130,
+                "raises": 24,
+                "pot_raises": 1
+              },
+              {
+                "calls": 112,
+                "raises": 42,
+                "pot_raises": 11
+              },
+              {
+                "calls": 57,
+                "raises": 15,
+                "pot_raises": 6
+              },
+              {
+                "calls": 40,
+                "raises": 11,
+                "pot_raises": 6
+              }
+            ]
+          },
+          {
+            "calls": 336,
+            "seconds": 0.9248480019759882,
+            "max_decision_ms": 7.356236001214711,
+            "errors": 0,
+            "actions": {
+              "FOLD": 44,
+              "CHECK_CALL": 191,
+              "RAISE_HALF": 50,
+              "RAISE_POT": 51
+            },
+            "by_street": [
+              {
+                "calls": 112,
+                "raises": 55,
+                "pot_raises": 17
+              },
+              {
+                "calls": 120,
+                "raises": 35,
+                "pot_raises": 23
+              },
+              {
+                "calls": 62,
+                "raises": 5,
+                "pot_raises": 5
+              },
+              {
+                "calls": 42,
+                "raises": 6,
+                "pot_raises": 6
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 352,
+            "seconds": 0.303547220022665,
+            "max_decision_ms": 9.596174999387586,
+            "errors": 0,
+            "actions": {
+              "FOLD": 36,
+              "CHECK_CALL": 241,
+              "RAISE_HALF": 59,
+              "RAISE_POT": 16
+            },
+            "by_street": [
+              {
+                "calls": 124,
+                "raises": 18,
+                "pot_raises": 0
+              },
+              {
+                "calls": 122,
+                "raises": 39,
+                "pot_raises": 10
+              },
+              {
+                "calls": 61,
+                "raises": 13,
+                "pot_raises": 4
+              },
+              {
+                "calls": 45,
+                "raises": 5,
+                "pot_raises": 2
+              }
+            ]
+          },
+          {
+            "calls": 334,
+            "seconds": 0.958776464980474,
+            "max_decision_ms": 7.381834000625531,
+            "errors": 0,
+            "actions": {
+              "FOLD": 32,
+              "CHECK_CALL": 188,
+              "RAISE_HALF": 48,
+              "RAISE_POT": 66
+            },
+            "by_street": [
+              {
+                "calls": 110,
+                "raises": 53,
+                "pot_raises": 19
+              },
+              {
+                "calls": 119,
+                "raises": 42,
+                "pot_raises": 30
+              },
+              {
+                "calls": 64,
+                "raises": 8,
+                "pot_raises": 7
+              },
+              {
+                "calls": 41,
+                "raises": 11,
+                "pot_raises": 10
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 12.103468244000396
+    },
+    {
+      "strategy": "candidate",
+      "opponent": "public:dushyant-byte-me",
+      "seed": "public-probe-dev-v1",
+      "deals": 100,
+      "mean_bb_per_deal": -1.9,
+      "ci95": [
+        -3.863708612587803,
+        0.06370861258780325
+      ],
+      "verdict": "CHOP",
+      "paired_bb": [
+        -0.5,
+        4.0,
+        0.0,
+        -22.0,
+        -3.0,
+        -4.0,
+        -1.0,
+        -3.0,
+        -1.0,
+        1.5,
+        -1.0,
+        -1.0,
+        -1.0,
+        -0.5,
+        -32.0,
+        0.0,
+        14.0,
+        -1.0,
+        28.0,
+        -4.0,
+        -10.0,
+        10.0,
+        3.0,
+        10.0,
+        -11.0,
+        -37.0,
+        -1.0,
+        2.0,
+        -2.0,
+        -2.0,
+        -6.0,
+        5.0,
+        -5.5,
+        1.5,
+        8.0,
+        -34.0,
+        21.0,
+        0.0,
+        -0.5,
+        0.0,
+        -1.0,
+        3.0,
+        -0.5,
+        -0.5,
+        -13.0,
+        -3.0,
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        -17.0,
+        -1.0,
+        0.0,
+        0.0,
+        12.0,
+        -2.0,
+        0.0,
+        -20.0,
+        -5.0,
+        -2.0,
+        -4.0,
+        -2.5,
+        1.0,
+        -6.0,
+        -7.0,
+        32.0,
+        -5.0,
+        -10.0,
+        3.5,
+        -7.0,
+        -5.0,
+        1.5,
+        0.0,
+        -2.0,
+        2.0,
+        -4.0,
+        -4.0,
+        10.0,
+        -35.5,
+        -1.0,
+        -4.0,
+        -1.0,
+        -0.5,
+        -5.0,
+        -5.0,
+        -1.0,
+        -2.0,
+        5.0,
+        -5.0,
+        1.0,
+        0.0,
+        -2.0,
+        -12.0,
+        0.0,
+        2.0,
+        2.0,
+        5.0,
+        7.0,
+        -0.5,
+        -3.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 313,
+            "seconds": 0.28611531101705623,
+            "max_decision_ms": 5.536447999475058,
+            "errors": 0,
+            "actions": {
+              "FOLD": 38,
+              "CHECK_CALL": 178,
+              "RAISE_HALF": 71,
+              "RAISE_POT": 26
+            },
+            "by_street": [
+              {
+                "calls": 117,
+                "raises": 23,
+                "pot_raises": 1
+              },
+              {
+                "calls": 115,
+                "raises": 47,
+                "pot_raises": 9
+              },
+              {
+                "calls": 48,
+                "raises": 17,
+                "pot_raises": 7
+              },
+              {
+                "calls": 33,
+                "raises": 10,
+                "pot_raises": 9
+              }
+            ]
+          },
+          {
+            "calls": 317,
+            "seconds": 0.054799435996756074,
+            "max_decision_ms": 1.9889239993062802,
+            "errors": 0,
+            "actions": {
+              "FOLD": 45,
+              "CHECK_CALL": 158,
+              "RAISE_HALF": 69,
+              "RAISE_POT": 45
+            },
+            "by_street": [
+              {
+                "calls": 111,
+                "raises": 57,
+                "pot_raises": 30
+              },
+              {
+                "calls": 118,
+                "raises": 35,
+                "pot_raises": 5
+              },
+              {
+                "calls": 54,
+                "raises": 11,
+                "pot_raises": 3
+              },
+              {
+                "calls": 34,
+                "raises": 11,
+                "pot_raises": 7
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 354,
+            "seconds": 0.3588969429711142,
+            "max_decision_ms": 30.337501999383676,
+            "errors": 0,
+            "actions": {
+              "FOLD": 33,
+              "CHECK_CALL": 249,
+              "RAISE_HALF": 53,
+              "RAISE_POT": 19
+            },
+            "by_street": [
+              {
+                "calls": 116,
+                "raises": 19,
+                "pot_raises": 0
+              },
+              {
+                "calls": 117,
+                "raises": 38,
+                "pot_raises": 10
+              },
+              {
+                "calls": 72,
+                "raises": 10,
+                "pot_raises": 6
+              },
+              {
+                "calls": 49,
+                "raises": 5,
+                "pot_raises": 3
+              }
+            ]
+          },
+          {
+            "calls": 331,
+            "seconds": 0.05828561399721366,
+            "max_decision_ms": 1.437764000002062,
+            "errors": 0,
+            "actions": {
+              "FOLD": 30,
+              "CHECK_CALL": 165,
+              "RAISE_HALF": 79,
+              "RAISE_POT": 57
+            },
+            "by_street": [
+              {
+                "calls": 111,
+                "raises": 63,
+                "pot_raises": 31
+              },
+              {
+                "calls": 114,
+                "raises": 41,
+                "pot_raises": 10
+              },
+              {
+                "calls": 63,
+                "raises": 19,
+                "pot_raises": 7
+              },
+              {
+                "calls": 43,
+                "raises": 13,
+                "pot_raises": 9
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 1.3860988870001165
+    },
+    {
+      "strategy": "candidate",
+      "opponent": "public:malki-equitynet",
+      "seed": "public-probe-dev-v1",
+      "deals": 100,
+      "mean_bb_per_deal": 2.71,
+      "ci95": [
+        0.37600339851199127,
+        5.043996601488009
+      ],
+      "verdict": "WIN",
+      "paired_bb": [
+        0.0,
+        0.0,
+        1.0,
+        14.0,
+        1.0,
+        -1.0,
+        14.0,
+        1.0,
+        2.0,
+        2.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        23.0,
+        4.0,
+        1.0,
+        0.0,
+        -1.0,
+        -10.0,
+        4.0,
+        37.0,
+        0.0,
+        -3.0,
+        37.0,
+        36.0,
+        0.0,
+        5.0,
+        1.0,
+        2.0,
+        -3.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        26.0,
+        34.0,
+        0.0,
+        3.0,
+        3.0,
+        -1.0,
+        5.0,
+        2.0,
+        0.0,
+        14.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -3.0,
+        0.0,
+        -44.0,
+        0.0,
+        2.0,
+        0.0,
+        16.0,
+        -26.0,
+        2.0,
+        0.0,
+        -1.0,
+        1.0,
+        9.0,
+        0.0,
+        0.0,
+        20.0,
+        10.0,
+        -5.0,
+        -1.0,
+        1.0,
+        -2.0,
+        -7.0,
+        0.0,
+        0.0,
+        8.0,
+        -44.0,
+        0.0,
+        6.0,
+        38.0,
+        0.0,
+        16.0,
+        -2.0,
+        1.0,
+        0.0,
+        10.0,
+        0.0,
+        0.0,
+        -3.0,
+        10.0,
+        4.0,
+        0.0,
+        0.0,
+        -2.0,
+        4.0,
+        0.0,
+        -3.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "half_stats": [
+        [
+          {
+            "calls": 357,
+            "seconds": 0.43041606800761656,
+            "max_decision_ms": 51.61894299999403,
+            "errors": 0,
+            "actions": {
+              "FOLD": 26,
+              "CHECK_CALL": 208,
+              "RAISE_HALF": 73,
+              "RAISE_POT": 50
+            },
+            "by_street": [
+              {
+                "calls": 110,
+                "raises": 25,
+                "pot_raises": 3
+              },
+              {
+                "calls": 106,
+                "raises": 47,
+                "pot_raises": 15
+              },
+              {
+                "calls": 84,
+                "raises": 31,
+                "pot_raises": 15
+              },
+              {
+                "calls": 57,
+                "raises": 20,
+                "pot_raises": 17
+              }
+            ]
+          },
+          {
+            "calls": 401,
+            "seconds": 0.04759726802149089,
+            "max_decision_ms": 1.892942998892977,
+            "errors": 0,
+            "actions": {
+              "FOLD": 26,
+              "CHECK_CALL": 323,
+              "RAISE_HALF": 28,
+              "RAISE_POT": 24
+            },
+            "by_street": [
+              {
+                "calls": 113,
+                "raises": 17,
+                "pot_raises": 9
+              },
+              {
+                "calls": 127,
+                "raises": 13,
+                "pot_raises": 5
+              },
+              {
+                "calls": 96,
+                "raises": 13,
+                "pot_raises": 5
+              },
+              {
+                "calls": 65,
+                "raises": 9,
+                "pot_raises": 5
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "calls": 363,
+            "seconds": 0.3279169440174883,
+            "max_decision_ms": 4.127582000364782,
+            "errors": 0,
+            "actions": {
+              "FOLD": 39,
+              "CHECK_CALL": 224,
+              "RAISE_HALF": 63,
+              "RAISE_POT": 37
+            },
+            "by_street": [
+              {
+                "calls": 113,
+                "raises": 22,
+                "pot_raises": 2
+              },
+              {
+                "calls": 102,
+                "raises": 38,
+                "pot_raises": 13
+              },
+              {
+                "calls": 84,
+                "raises": 25,
+                "pot_raises": 9
+              },
+              {
+                "calls": 64,
+                "raises": 15,
+                "pot_raises": 13
+              }
+            ]
+          },
+          {
+            "calls": 379,
+            "seconds": 0.035035565017096815,
+            "max_decision_ms": 0.8782559998508077,
+            "errors": 0,
+            "actions": {
+              "FOLD": 15,
+              "CHECK_CALL": 294,
+              "RAISE_HALF": 34,
+              "RAISE_POT": 36
+            },
+            "by_street": [
+              {
+                "calls": 114,
+                "raises": 22,
+                "pot_raises": 15
+              },
+              {
+                "calls": 115,
+                "raises": 17,
+                "pot_raises": 5
+              },
+              {
+                "calls": 89,
+                "raises": 15,
+                "pot_raises": 7
+              },
+              {
+                "calls": 61,
+                "raises": 16,
+                "pot_raises": 9
+              }
+            ]
+          }
+        ]
+      ],
+      "elapsed_seconds": 1.0700941890008835
+    }
+  ],
+  "limitations": [
+    "Only100duplicatepairsperprofile; development challenge characterization, not finalvalidation.",
+    "Three public repositories with no explicit redistributionlicense; exactsourcesandweights keptprivate.",
+    "FixedexistingRNGs, butwalltime-dependent sampling maypreventexactactionreplay."
+  ],
+  "actual_hands": 600,
+  "runtime_manifest_unchanged": true
+}

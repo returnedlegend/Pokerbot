@@ -16,6 +16,8 @@ deals: **+0.377 bb per duplicate deal**, with a whole-seed 95% interval
 ten profiles, with zero errors. Improvement over the wider external field is
 still uncertain. The complete results and limits are in
 [docs/NEURAL_REVISION.md](docs/NEURAL_REVISION.md).
+The six-hour improvement worker and its protected validation protocol are
+described in [docs/OVERNIGHT_RUN.md](docs/OVERNIGHT_RUN.md).
 
 ## Run
 
@@ -87,6 +89,9 @@ and paired 95% confidence intervals. Its direct function timing **excludes HTTP*
 and does not enforce a time bank. Use the official judge to validate deployment
 and time usage. The independent MC opponents are stronger stress tests; their
 own slow Python simulations need not meet the event's time limit.
+Earlier Docker resource requests did not establish enforcement in this
+rootless cloud; [docs/RUNTIME_LIMITS.md](docs/RUNTIME_LIMITS.md) records the
+correction and the newer OS-enforced certification method.
 
 Development tuning seeds and validation seeds are separate. Synthetic opponents
 cannot establish performance against unknown tournament entries. Detailed

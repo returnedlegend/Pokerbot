@@ -1,0 +1,325 @@
+{
+  "phase": "complete",
+  "status": "certified",
+  "runtime_verified": true,
+  "auto_promoted": false,
+  "original_runtime_modified": false,
+  "started_at": "2026-11-08T04:08:48.960776+00:00",
+  "scope": "Runtime certification only; statistical selection remains in output/decision.json.",
+  "deals_per_half": 1000,
+  "smoke_only": false,
+  "build_tags": {
+    "base": "jr007-cert-e771b4329d5c-base:local",
+    "bot": "jr007-cert-e771b4329d5c-bot:local"
+  },
+  "container": "jr007-cert-e771b4329d5c-match",
+  "archive_sha256": "8dc627fd9d62740c6281480e0209db93a4d7391ee8d68456b985d34e34f47dc9",
+  "chosen": "current",
+  "decision_sha256": "e6037e35a5d3213d5665dc1990e5ac03e4f7b98b33d8646a53306dedbad8e909",
+  "statistics_gates_passed": false,
+  "runtime_sha256": {
+    "agent.py": "e32bdc4d54a4f7be50c323e08ac3cc2fd70f267e8ee50fbdb85f2c1dd6bed8d0",
+    "strategy.py": "1a92e94f52c522513f8f1eed46170d4a262e0f57b2775f41c4261b61defcefaa",
+    "opponent_model.py": "ca642d5b5f87a266c5b6ded641803de44c1cbaf55a01874974e3e009dbebb881",
+    "policy.json": "81411e0ee1c83d010b761673ff4b0828dadd29ee18ba77c87b776ecfbb0ada30",
+    "game.py": "bc00e3c2d1bf64cbd36bf5553dae218767f11b20f388e5c417d989919877f2db",
+    "evaluator.py": "e2a151a4c41828a035030f490c91b81015d04bc209abfb860ca3d0dce649e0b4",
+    "equity_engine.py": "0c8dcfbc19a517f2d4ca9d1a4b18905dedd05f0d9983077203b0ce1988911bc1",
+    "preflop_model.npz": "b69a262465ad89ab406f220fd20829de0e4f195a3a4138259415cb6c37c046ab",
+    "equity_network.py": "17dcb03a0181aa0f30a2a97de99fcfc1c4caf612273363429be31d988b5d6040",
+    "equity_network.npz": "a2897e81bf7810d249ebba57931cffa9b979bcdcb4bd8cea8be7229468d5d1e1",
+    "river_solver.py": "a37b5e962b6cc80c2e8da17c09207d1e06128f9f3a11aa18f8264ae8d6416a4a",
+    "river_policy.npz": "85c8a720d98096f5fffa5ecc45ea896a7d32203dd72184e45add2cd80b5abdd0",
+    "requirements.txt": "1d849660c99debc1b4f390698015089319798d9ccd9190d5ae417fccaf3116d7",
+    "docker/Dockerfile.base": "d54f26ad44236c8a90308286e7de703d9e8c3916e6baa77d3a6fc3c56ab04d15",
+    "docker/Dockerfile.agent": "6baea809885f97fd50187d437009bb9ac38d5d0855e29e71dcf1194b4c2ce186",
+    ".dockerignore": "800fa7545f2ee1d65fca3284c674368e1d1741f1ffea098f13ae1ebf15e6f8ac",
+    "THIRD_PARTY_NOTICES.md": "1cee6979a13c2e8309015325563d07900f5281e04e23bf5b5c3b1687cc5efece"
+  },
+  "package_verified": true,
+  "checker_sha256": {
+    "tools/check_build_cloud.sh": "b2cf2eff923a9e4530df716084ed47457f6a543d20c695ef6a8f07150b32cec6",
+    "tools/smoke_test.py": "6bfd9f0e78c3343acceebbf7214aee7cb049821b950998de53f440140c5a652e",
+    "judge_engine.py": "fa7a7e3fb49c09588cfcf0930a8e3f6c189e419dbc54263ae7d53b953223d422",
+    "baseline-bots/baseline_random.py": "1d620921cdf203ee6ceafac40e5d3e4d285c1dad5719d918ab93155351f6f329",
+    "tools/style_opponents.py": "08a322a95feeb44437bb5a72eaa0f946c17e0dbfc09643360ee518d9298ded77"
+  },
+  "docker_daemon": {
+    "cgroup_driver": "none",
+    "cgroup_version": "2",
+    "warnings": [
+      "WARNING: Running in rootless-mode without cgroups. Systemd is required to enable cgroups in rootless-mode."
+    ]
+  },
+  "actual_enforcement": "shared_one_CPU_affinity_and_per_process_4GiB_address_space",
+  "memory_scope": "4GiB hard virtual-address-space limit on each single-process bot/probe/judge; no claim of a shared4GiB cgroup when rootless Docker cannot enforce it.",
+  "build": {
+    "base_image": "sha256:d496de9d6e96d7f61a389ecf40a8869ccf281c306eab564301121c52e1c68ca5",
+    "bot_image": "sha256:73ed5b42dc3d89ab8cb4866f0c7b26c506191d8d33c1a2c40c211b6c18cd0713",
+    "base_bytes": 1121246749,
+    "bot_bytes": 1333792291,
+    "added_bytes": 212545542,
+    "organizer_dockerfiles_unchanged": true,
+    "tls_verification": "Preserved through cloud helper temporary CA secret mounts; unique tags and OS-limited test launch only. Organizer Dockerfiles unchanged.",
+    "log": "certification-artifacts/build-smoke.log"
+  },
+  "smoke": {
+    "status": "passed",
+    "cold_start_seconds": 8.6,
+    "startup_limit_seconds": 15
+  },
+  "container_creation_wall_seconds": 35.07100247000017,
+  "startup_clock": {
+    "pid1_start_ticks": 1235175,
+    "clock_ticks_per_second": 100,
+    "clock": "CLOCK_BOOTTIME",
+    "process_startup_and_smoke_seconds": 9.002651897999385
+  },
+  "fresh_process_and_smoke_seconds": 9.002651897999385,
+  "runtime": {
+    "cpu": 1,
+    "memory": "4g",
+    "verified_container_configuration": {
+      "network_mode": "none",
+      "readonly_rootfs": true,
+      "nano_cpus": 1000000000,
+      "memory_bytes": 4294967296,
+      "user": "10001:10001",
+      "cap_drop": [
+        "ALL"
+      ],
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pids_limit": 256,
+      "tmpfs": {
+        "/tmp": "rw,nosuid,nodev,size=512m"
+      }
+    }
+  },
+  "actual_os_limits": {
+    "affinity": [
+      0
+    ],
+    "rlimit_as": [
+      4294967296,
+      4294967296
+    ],
+    "cpus_allowed_list": "0",
+    "cgroup_cpu_max": "400000 100000",
+    "cgroup_memory_max": "34359738368"
+  },
+  "image_runtime_matches_package": true,
+  "validation_checks": {
+    "cold_start_within_15_seconds": true,
+    "fresh_process_startup_within_15_seconds": true,
+    "image_runtime_matches_package": true,
+    "bot_banks_clean_and_within_8_seconds": true,
+    "probe_banks_clean_and_within_8_seconds": true,
+    "full_1000_deal_duplicate_match": true,
+    "all_actual_processes_one_CPU_and_4GiB_address_space": true,
+    "single_process_bot_no_children_observed": true,
+    "release_archive_unchanged": true,
+    "selection_decision_unchanged": true
+  },
+  "memory_measurement": {
+    "samples": 304,
+    "aggregate_peak_rss_bytes_sampled": 660746240,
+    "aggregate_memory_cgroup_enforced": false,
+    "bot_max_child_processes": 0,
+    "bot_child_audit_errors": 0,
+    "process_parent_mapping_last_sample": {
+      "1": 0,
+      "31": 0,
+      "36": 0,
+      "54": 0
+    },
+    "registered_external_processes": {
+      "36": {
+        "pid": 36,
+        "ppid": 0,
+        "role": "probe",
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ]
+      },
+      "31": {
+        "pid": 31,
+        "ppid": 0,
+        "role": "monitor",
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ]
+      },
+      "13": {
+        "pid": 13,
+        "ppid": 0,
+        "role": "management",
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ]
+      },
+      "7": {
+        "pid": 7,
+        "ppid": 0,
+        "role": "management",
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ]
+      },
+      "42": {
+        "pid": 42,
+        "ppid": 0,
+        "role": "judge",
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ]
+      },
+      "54": {
+        "pid": 54,
+        "ppid": 0,
+        "role": "management",
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ]
+      }
+    },
+    "child_audit_method": "PPid from /proc/status; exclude only certification-launcher-registered probe/judge/monitor/management helpers, which are started externally through Dockerexec.",
+    "roles": {
+      "bot": {
+        "pids": [
+          1
+        ],
+        "all_samples_bounded": true,
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ],
+        "cpus_allowed_list": "0",
+        "peak_rss_bytes_sampled": 311848960,
+        "peak_rss_bytes_kernel": 311848960
+      },
+      "probe": {
+        "pids": [
+          36
+        ],
+        "all_samples_bounded": true,
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ],
+        "cpus_allowed_list": "0",
+        "peak_rss_bytes_sampled": 264740864,
+        "peak_rss_bytes_kernel": 264740864
+      },
+      "judge": {
+        "pids": [
+          42
+        ],
+        "all_samples_bounded": true,
+        "affinity": [
+          0
+        ],
+        "rlimit_as": [
+          4294967296,
+          4294967296
+        ],
+        "cpus_allowed_list": "0",
+        "peak_rss_bytes_sampled": 68603904,
+        "peak_rss_bytes_kernel": 75923456
+      }
+    },
+    "sampling_note": "100ms sampled RSS across all container processes, including this monitor; not a hard aggregate RSS cap."
+  },
+  "http_match": {
+    "opponent": "independent loose_aggressive StyleOpponent",
+    "seed": "overnight-runtime-certification-20261108",
+    "deals_per_half": 1000,
+    "total_hands": 2000,
+    "verdict": "AGENT1_WIN",
+    "mean_bb_per_deal": 5.485,
+    "ci95": [
+      4.4439024642623925,
+      6.526097535737608
+    ],
+    "agent_stats": [
+      {
+        "calls": 3669,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 3.096496,
+        "wall_seconds": 6.760924
+      },
+      {
+        "calls": 3715,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 2.976448,
+        "wall_seconds": 6.686247
+      }
+    ],
+    "opponent_stats": [
+      {
+        "calls": 3537,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 0.79115,
+        "wall_seconds": 4.178609
+      },
+      {
+        "calls": 3546,
+        "skipped_calls": 0,
+        "timed_out": false,
+        "errors": 0,
+        "forfeited": false,
+        "error_messages": [],
+        "time_seconds": 0.778671,
+        "wall_seconds": 4.17296
+      }
+    ],
+    "result": "certification-artifacts/http-match.json",
+    "log": "certification-artifacts/http-match.log",
+    "resource_note": "Bot, independent probe and official judge share one CPU via actual affinity. Each process has a hard4GiB address-space limit; rootless Docker's requested4GiB aggregate cgroup is not claimed as enforced. New-half resets learning; a separate fresh-process cold smoke also passed."
+  },
+  "ready_for_promotion": false,
+  "finished_at": "2026-11-08T04:10:53.205604+00:00"
+}

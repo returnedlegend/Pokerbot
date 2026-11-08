@@ -133,14 +133,38 @@ official game/referee files remain unchanged. The managed-cloud build helper
 uses temporary CA secret mounts while preserving TLS verification.
 
 `results/neural-runtime-validation.json` records the image and runtime hashes.
-The production image ran as UID 10001 with one CPU, 4 GB memory, no network,
-a read-only root filesystem and a writable `/tmp` tmpfs. Cold startup took
+The image ran as UID 10001 with no network, a read-only root filesystem and a
+writable `/tmp` tmpfs. The first test requested one CPU and 4 GB through Docker;
+the later [resource-enforcement audit](RUNTIME_LIMITS.md) found that the cloud
+daemon does not enforce those cgroup requests. Those initial measurements are
+therefore not proof of the one-CPU/4-GB allowance. Cold startup took
 **7.3 seconds of the 15-second allowance**. A full official-judge match against
 the independent loose-aggressive probe played 1,000 duplicate deals, or 2,000
 hands, with zero errors, skipped calls, timeouts or forfeits. Bot thinking
-banks were **5.554 and 4.218 seconds of 8 seconds**. The combined bot, opponent
-and judge shared that single CPU. The process was not restarted between the
+banks were **5.554 and 4.218 seconds of 8 seconds** under that original setup.
+The process was not restarted between the
 two halves; learning was reset through the protocol's `/new-half` endpoint.
+
+The overnight certifier adds verified OS CPU affinity and hard per-process
+address-space limits before repeating the actual startup and full HTTP match.
+Its certificate names the enforcement mechanism and reports measured memory;
+it does not treat Docker's requested configuration as proof.
+
+The completed stricter check is recorded in
+`results/strict-runtime-certification.json`. Every sampled bot, probe and judge
+thread used the same single CPU, and each process had a hard 4-GiB
+address-space limit. Cold startup was **8.6 seconds**; a separate fresh process
+and smoke check took **9.003 seconds**, measured from the kernel's process
+start time and excluding Docker filesystem creation. The full 2,000-hand HTTP
+match had zero errors, skips, timeouts or forfeits. Bot thinking banks were
+**3.096 and 2.976 seconds of 8 seconds**. Bot peak resident memory was **297.4
+MiB**; sampled aggregate resident memory was **630.1 MiB**. No bot child
+processes were observed. A shared 4-GiB cgroup is not claimed.
+
+That independent loose-aggressive runtime probe yielded +5.485 bb per
+duplicate deal, interval [+4.444, +6.526]. Its cards differ from the earlier
+Docker match, so the difference between their chip scores is not evidence of
+a strategy improvement. The policy and model hashes were unchanged.
 
 The one-probe Docker score was +3.891 bb per duplicate deal, approximate
 card-paired interval [+2.801, +4.981]. This verifies a deployable winning match

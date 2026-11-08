@@ -1,3 +1,5 @@
 -r requirements.txt
 pytest>=8
 httpx==0.28.1
+# Offline search confidence intervals and their guard tests; never imported by the bot.
+scipy==1.18.1
